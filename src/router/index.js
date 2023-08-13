@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import PostView from "@/views/PostView.vue";
+import TitleView from "@/views/TitleView.vue";
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import(/* webpackChunkName: "Home" */ '@/views/HomeView.vue')
+    component: TitleView
   },
   {
     path: '/about',
@@ -19,6 +20,12 @@ const routes = [
     path: '/post',
     name: 'post',
     component: PostView
+  },
+  {
+    path: '/main',
+    name:'main',
+    component: () => import(/* webpackChunkName: "Home" */ '@/views/HomeView.vue')
+
   }
 ]
 
