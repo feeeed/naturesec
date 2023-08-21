@@ -13,7 +13,7 @@
         <v-row>
           <v-col>
             <v-sheet
-                class="d-flex  flex-column justify-center flex-wrap  mx-auto px-4 bg-green-lighten-3"
+                class="d-flex  flex-column justify-center flex-wrap  mx-auto px-4 bg-green-lighten-3 text-medium-emphasis"
                 height="100%"
                 rounded
                 max-width="800"
@@ -39,7 +39,7 @@
           </v-col>
           <v-col>
             <v-sheet
-                class="d-flex  flex-column justify-center flex-wrap  mx-auto px-4 bg-green-lighten-3"
+                class="d-flex  flex-column justify-center flex-wrap  mx-auto px-4 bg-green-lighten-3 text-medium-emphasis"
                 height="100%"
                 rounded
                 max-width="800"

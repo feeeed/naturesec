@@ -4,14 +4,7 @@
       <div class="about-title">
         <h1>Контакты</h1>
       </div>
-      <div class="about-info">
-        <h3>Наши телефоны</h3>
-        <div class="about-phones">
-          <v-list :items="items"></v-list>
 
-        </div>
-
-      </div>
       <div class="map-block">
         <yandex-map :coords="coords">
           <ymap-marker
@@ -21,7 +14,7 @@
         </yandex-map>
       </div>
       <div class="about-adress">
-        <h2>Адрес: 644046, г. Омск,
+        <h2 class="text-medium-emphasis">Адрес: 644046, г. Омск,
           ул. Учебная угол Маяковского 152/20</h2>
       </div>
       <div class="sociallinks-block">
@@ -33,25 +26,32 @@
         <div class="social-links">
             <v-col cols="12" sm="6" md="4">
               <v-btn
-                  block rounded="xl"
-                  size="x-large"
+                  class="ma-2"
+                  icon=""
+
               >
-                Rounded xl</v-btn>
+
+                <img src="../assets/whatsapplogo.png" height="50" width="50"/>
+                </v-btn>
             </v-col>
             <v-col cols="12" sm="6" md="4">
               <v-btn
-                  append-icon=""
-                  block rounded="xl"
-                  size="x-large"
+                  class="ma-2"
+                  icon=""
               >
-                Rounded xl</v-btn>
+
+                <img src="../assets/telegramlogo.png" height="50" width="50"/>
+                 </v-btn>
             </v-col>
             <v-col cols="12" sm="6" md="4">
               <v-btn
-                  block rounded="xl"
-                  size="x-large"
+                  class="ma-2"
+                  icon=""
               >
-                Rounded xl</v-btn>
+
+                <img src="../assets/vk-new.png" height="50" width="50"/>
+
+                </v-btn>
             </v-col>
 
       </div>
@@ -113,7 +113,6 @@ export default {
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 4px 11px 10px 0px rgba(24, 29, 32, 0.2);
   flex-wrap: wrap;
 }
 .link-top{
