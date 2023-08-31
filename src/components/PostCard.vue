@@ -35,7 +35,11 @@ export default {
     mainContent:{
       type: String,
       default:''
-    }
+    },
+    imageURL:{
+      type: String,
+      default:''
+    },
   }
 }
 </script>

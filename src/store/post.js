@@ -74,6 +74,9 @@ const getters = {
     postsError: ({postsError}) => postsError,
     searchPosts(state){
         return [...state.posts].filter(post=>post.title.toLowerCase().includes(state.searchQuery.toLowerCase()))
+    },
+    sortedPosts(state){
+        return [...state.posts].filter(post=>post.description.includes('Услуги'))
     }
 }
 const state = () => ({

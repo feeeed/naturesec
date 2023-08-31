@@ -14,8 +14,7 @@
               el·ee·mos·y·nar·y
             </h1>
             <div class="pa-sm-6">
-              sdfsdfsdfsdfsgdfgdfgdf<br>
-              asdfdsfsdffdfs
+              <h1>Это страница поста с ID = {{ $route.params.id }}</h1>
               <br>
               dfsdf
             </div>
