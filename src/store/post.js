@@ -77,7 +77,8 @@ const getters = {
     },
     sortedPosts(state){
         return [...state.posts].filter(post=>post.description.includes('Услуги'))
-    }
+    },
+
 }
 const state = () => ({
     post:{},

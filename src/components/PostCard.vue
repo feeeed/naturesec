@@ -14,7 +14,16 @@
         <span v-html="mainContent"></span>
 
       </v-card-text>
+    <v-card-actions>
+      <v-btn
+          color="orange-lighten-2"
+          variant="text"
+          @click="$router.push(`/posts/${_id}`)"
 
+      >
+        Подробнее
+      </v-btn>
+    </v-card-actions>
   </v-card>
   </v-container>
 </template>
@@ -24,6 +33,9 @@ export default {
 
   name: 'PostCard',
   props:{
+    _id:{
+      type: String,
+    },
     title: {
       type: String,
       default: ''

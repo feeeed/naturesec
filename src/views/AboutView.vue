@@ -13,49 +13,68 @@
           ></ymap-marker>
         </yandex-map>
       </div>
-      <div class="about-adress">
-        <h2 class="text-medium-emphasis">Адрес: 644046, г. Омск,
-          ул. Учебная угол Маяковского 152/20</h2>
-      </div>
-      <div class="sociallinks-block">
-        <div class="social-descriprion">
-          <h3>
-            Наши социальные сети
-          </h3>
-        </div>
-        <div class="social-links">
-            <v-col cols="12" sm="6" md="4">
-              <v-btn
-                  class="ma-2"
-                  icon=""
+      <v-container class="py-7">
+        <v-row class="align-center text-center justify-center">
+          <v-card
+              class="mx-auto my-4"
+              width="400"
+              height="150"
 
-              >
+          >
+            <template v-slot:title>
+              Наши телефоны
+            </template>
 
-                <img src="../assets/whatsapplogo.png" height="50" width="50"/>
-                </v-btn>
-            </v-col>
-            <v-col cols="12" sm="6" md="4">
-              <v-btn
-                  class="ma-2"
-                  icon=""
-              >
+            <v-card-text>
+              <li>+7 (3812) 510-464</li>
+              <li>+7 (3812) 377-211</li>
+              <li>+7 (3812) 373-115</li>
+              <li>+7 (3812) 510-050</li>
+            </v-card-text>
+          </v-card>
+          <v-card
+              class="mx-auto my-4"
+              width="400"
+              height="150"
 
-                <img src="../assets/telegramlogo.png" height="50" width="50"/>
-                 </v-btn>
-            </v-col>
-            <v-col cols="12" sm="6" md="4">
-              <v-btn
-                  class="ma-2"
-                  icon=""
-              >
+          >
+            <template v-slot:title>
+              Наш офис
+            </template>
 
+            <v-card-text>
+              <h3>Природоохранный центр</h3>
+              Учебная, 152
+              <br>102 офис; 1 этаж
+              <br>Центральный округ, Омск, 644046
+            </v-card-text>
+          </v-card>
+          <v-card
+              class="mx-auto my-4"
+              width="400"
+              height="150"
+
+
+          >
+            <template v-slot:title>
+              Наши соцсети
+            </template>
+
+            <v-card-text>
+              <v-btn class="ma-2" icon href="https://vk.com/naturesecur">
                 <img src="../assets/vk-new.png" height="50" width="50"/>
+              </v-btn>
+              <v-btn class="ma-2" icon>
+                <img src="../assets/telegramlogo.png" height="50" width="50"/>
+              </v-btn>
+              <v-btn class="ma-2" icon>
+                <img src="../assets/whatsapplogo.png" height="50" width="50"/>
+              </v-btn>
+            </v-card-text>
+          </v-card>
+        </v-row>
+      </v-container>
 
-                </v-btn>
-            </v-col>
-
-      </div>
-      </div>
     </div>
   </v-main>
 </template>
@@ -133,5 +152,9 @@ export default {
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+}
+.cards-info{
+  display: flex;
+  flex-direction: row;
 }
 </style>

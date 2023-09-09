@@ -1,7 +1,6 @@
 <template>
   <div class="input123">
   <v-text-field
-      :loading="loading"
       :value="modelValue"
       @input="updateInput"
       density="compact"

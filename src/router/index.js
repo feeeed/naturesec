@@ -18,7 +18,7 @@ const routes = [
   },
   {
     path: '/posts/:id',
-    name: 'post',
+    name: 'posts',
     component: PostView
   },
   {
@@ -26,12 +26,12 @@ const routes = [
     name:'main',
     component: () => import(/* webpackChunkName: "Home" */ '@/views/HomeView.vue')
 
-  }
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

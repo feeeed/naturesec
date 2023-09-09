@@ -1,9 +1,29 @@
 <template>
   <div class="welcome">
     <v-main class="bg-grey-lighten-3">
-      <div class="image-welcome">
-        <img src="./../assets/welcomeimg.png">
-      </div>
+      <v-container class="v-container--fluid">
+
+      <v-row class="align-content-center justify-center align-center flex-wrap-reverse bg-green-lighten-3 py-14">
+        <v-col class="ma-10 ">
+          <v-sheet color="green-lighten-3" class="text-h3 py-4 ">
+            Лидер региона в области предоставления услуг экологического назначения.
+          </v-sheet>
+          <v-sheet color="green-lighten-3" class="font-weight-regular text-medium-emphasis">
+            Вот уже на протяжение двух десятилетий, взаимодействуя с ведущими проектными
+            и научными организациями нашего региона, «Природоохранный центр» помогает успешно решать задачи любого
+            уровня сложности предприятиям нашей области. Мы постоянно развиваемся, расширяем объёмы задач,
+            растёт круг заказчиков. И сегодня мы готовы к долгосрочному взаимовыгодному сотрудничеству
+            со всеми заинтересованными юридическими лицами и индивидуальными предпринимателями.
+          </v-sheet>
+
+        </v-col>
+        <v-col class="d-flex justify-center flex-grow-1 flex-shrink-0">
+          <img src="./../assets/imgrig.png" style="max-width: 100%">
+        </v-col>
+
+
+      </v-row>
+      </v-container>
       <v-container>
         <v-row class="align-center text-center justify-center">
           <div class="text-block-welcome">
@@ -72,6 +92,7 @@
       </v-container>
     </v-main>
   </div>
+
 </template>
 
 <script>
@@ -101,12 +122,10 @@ export default {
   align-items: center;
   text-align: center;
 }
-.list-block-welcome{
-  padding-left: 45px;
-  padding-right: 45px;
-
-}
 .image-welcome>img{
+  max-width: 100%;
+}
+.img-welcome-block{
   max-width: 100%;
 }
 

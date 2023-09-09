@@ -1,5 +1,5 @@
   <template>
-    <v-navigation-drawer v-model="drawer" temporary>
+    <v-navigation-drawer v-model="drawer" temporary location="top">
       <v-divider></v-divider>
       <v-list density="compact" nav>
         <v-list-item

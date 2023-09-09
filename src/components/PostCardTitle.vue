@@ -25,6 +25,8 @@
       <v-btn
           color="orange-lighten-2"
           variant="text"
+          @click="$router.push(`/posts/${_id}`)"
+
       >
         Подробнее
       </v-btn>
@@ -37,6 +39,9 @@
 export default {
   name: 'PostCardTitle',
   props:{
+    _id:{
+      type: String,
+    },
     title:{
       type: String,
       default:''

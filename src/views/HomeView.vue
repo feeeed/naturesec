@@ -30,6 +30,9 @@
               cols="12"
               sm="3"
           >
+            <right-post-list
+              :posts="sortedPosts"
+              />
 
 
 
@@ -49,15 +52,17 @@
 import PostList from "@/components/layouts/PostList.vue";
 import{mapGetters,mapActions,mapState,mapMutations} from "vuex";
 import MyInput from "@/components/layouts/MyInput.vue";
+import RightPostList from "@/components/layouts/RightPostList.vue";
 
 export default {
-  components: {MyInput,PostList},
+  components: {RightPostList, MyInput,PostList},
   mounted() {
     this.fetchPosts();
   },
   computed:{
     ...mapGetters({
       searchPosts:'searchPosts',
+      sortedPosts:'sortedPosts',
     }),
     ...mapState({
       posts:state => state.post.posts,
