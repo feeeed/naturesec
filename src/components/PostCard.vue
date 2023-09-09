@@ -4,33 +4,38 @@
       class="mx-auto"
       flat
   >
-    <v-card-text
-    >
-      <div>Word of the Day</div>
-      <p class="text-h4 text--primary">
-        {{ title }}
-      </p>
-      <p>{{ description }}</p>
-      <div class="text--primary">
-        {{ mainContent}}
-      </div>
-    </v-card-text>
+      <v-card-item>
+        <v-card-title>{{ title }}</v-card-title>
+
+        <v-card-subtitle><span v-html="description"></span></v-card-subtitle>
+
+      </v-card-item>
+      <v-card-text>
+        <span v-html="mainContent"></span>
+
+      </v-card-text>
     <v-card-actions>
       <v-btn
+          color="orange-lighten-2"
+          variant="text"
+          @click="$router.push(`/posts/${_id}`)"
 
       >
-        Learn More
+        Подробнее
       </v-btn>
     </v-card-actions>
-
   </v-card>
   </v-container>
 </template>
 
 <script>
 export default {
+
   name: 'PostCard',
   props:{
+    _id:{
+      type: String,
+    },
     title: {
       type: String,
       default: ''
@@ -42,13 +47,16 @@ export default {
     mainContent:{
       type: String,
       default:''
-    }
+    },
+    imageURL:{
+      type: String,
+      default:''
+    },
   }
 }
 </script>
 
 <style>
-
 
 
 </style>

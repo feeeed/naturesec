@@ -4,7 +4,8 @@ import categories from "@/store/categories";
 
 export default createStore({
   modules : {
-    post,categories,
+    post:post,
+    categories:categories,
 
   }
 })

@@ -1,27 +1,18 @@
 <template>
   <v-main class="bg-grey-lighten-3">
     <v-container>
-      <v-row>
-        <v-col
-            cols="12"
-            sm="8"
-        >
-          <v-sheet
-              min-height="70vh"
-              rounded="lg"
-          >
-            <h1 class="text-center pa-4">
-              el·ee·mos·y·nar·y
-            </h1>
-            <div class="pa-sm-6">
-              sdfsdfsdfsdfsgdfgdfgdf<br>
-              asdfdsfsdffdfs
-              <br>
-              dfsdf
-            </div>
-          </v-sheet>
-        </v-col>
-      </v-row>
+      <post-card
+          :title="post.title"
+          :description="post.description"
+          :main-content="post.mainContent"
+
+
+      >
+
+      </post-card>
+
+      Страница {{$route.params.id}}
+
     </v-container>
   </v-main>
 
@@ -33,8 +24,28 @@
 </template>
 
 <script>
+import {mapActions, mapGetters,} from "vuex";
+import PostCard from "@/components/PostCard.vue";
 
-export default {
+
+ export default {
+   components:{
+     PostCard
+   },
+  mounted() {
+    this.fetchPost(this.$route.params.id);
+  },
+  computed:{
+    ...mapGetters({
+      post: 'post'
+
+    }),
+  },
+  methods:{
+    ...mapActions({
+      fetchPost:'fetchPost',
+    }),
+  }
 }
 </script>
 

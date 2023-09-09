@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import PostView from "@/views/PostView.vue";
+import TitleView from "@/views/TitleView.vue";
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import(/* webpackChunkName: "Home" */ '@/views/HomeView.vue')
+    component: TitleView
   },
   {
     path: '/about',
@@ -16,15 +17,21 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
   {
-    path: '/post',
-    name: 'post',
+    path: '/posts/:id',
+    name: 'posts',
     component: PostView
-  }
+  },
+  {
+    path: '/main',
+    name:'main',
+    component: () => import(/* webpackChunkName: "Home" */ '@/views/HomeView.vue')
+
+  },
 ]
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

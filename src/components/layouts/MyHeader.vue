@@ -1,21 +1,57 @@
   <template>
-    <v-app-bar flat color="green">
-      <v-container class="fill-height d-flex align-center">
-        <v-avatar
-            image="https://mobimg.b-cdn.net/v3/fetch/82/821db7ef6608c4e5bb62fb776722550c.jpeg"
-            size="39"
+    <v-navigation-drawer v-model="drawer" temporary location="top">
+      <v-divider></v-divider>
+      <v-list density="compact" nav>
+        <v-list-item
+            @click="$router.push(`/`)"
+            prepend-icon="mdi-view-dashboard"
+            title="Главная"
+            value="home"
 
-        ></v-avatar>
-        <h3> NatureSecure</h3>
-        <v-spacer></v-spacer>
+        ></v-list-item>
+        <v-list-item
+            @click="$router.push(`/main`)"
+            prepend-icon="mdi-view-dashboard"
+            title="Информация"
+            value="home"
+        ></v-list-item>
+        <v-list-item
+            @click="$router.push(`/about`)"
+            prepend-icon="mdi-forum"
+            title="Контакты"
+            value="about"
+        ></v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+    <v-app-bar
+        flat color="#ffffff"
+    >
+      <v-container class="fill-height d-flex align-center text-center justify-center">
+        <v-btn
+            @click.stop="drawer = !drawer"
+        >
+          <img src="../../assets/WDOMcutdq1U.png" height="45" width="100"/>
+        </v-btn>
+
 
         <v-btn
-            v-for="link in links"
-            :key="link"
             variant="text"
+            @click="$router.push(`/`)"
+        > Природоохранный центр</v-btn>
+        <v-spacer></v-spacer>
+        <v-btn
+            variant="text"
+            @click="$router.push(`/main`)"
         >
-          {{ link }}
+          Информация
         </v-btn>
+        <v-btn
+            variant="text"
+            @click="$router.push(`/about`)"
+        >
+          Контакты
+        </v-btn>
+
 
       </v-container>
     </v-app-bar>
@@ -23,14 +59,11 @@
 
 <script>
   export default {
-    data: () => ({
-      links: [
-        'Dashboard',
-        'Messages',
-        'Profile',
-        'Updates',
-      ],
-    }),
+    data(){
+      return{
+        drawer:null,
+      }
+    },
 }
 </script>
 
