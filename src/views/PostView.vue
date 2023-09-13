@@ -5,7 +5,7 @@
           :title="post.title"
           :description="post.description"
           :main-content="post.mainContent"
-
+          :imageURL="post.imageURL"
 
       >
 

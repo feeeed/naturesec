@@ -8,6 +8,12 @@
         <v-card-title>{{ title }}</v-card-title>
 
         <v-card-subtitle><span v-html="description"></span></v-card-subtitle>
+        <v-img
+            :src="imageURL"
+            height="auto"
+            width="auto"
+            cover
+        ></v-img>
 
       </v-card-item>
       <v-card-text>
@@ -16,7 +22,7 @@
       </v-card-text>
     <v-card-actions>
       <v-btn
-          color="orange-lighten-2"
+          color="green-lighten-2"
           variant="text"
           @click="$router.push(`/posts/${_id}`)"
 

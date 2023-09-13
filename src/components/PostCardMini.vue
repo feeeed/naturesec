@@ -1,11 +1,13 @@
 <template>
   <v-container>
     <v-card
-    width="400">
+    width="auto">
       <v-card-item>
-        <v-card-title>
+        <v-card-text>
+
           {{title}}
-        </v-card-title>
+
+        </v-card-text>
         <v-card-actions>
           <v-btn
               color="green-lighten-2"
