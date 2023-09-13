@@ -23,7 +23,7 @@
 
     <v-card-actions>
       <v-btn
-          color="orange-lighten-2"
+          color="green-lighten-2"
           variant="text"
           @click="$router.push(`/posts/${_id}`)"
 
