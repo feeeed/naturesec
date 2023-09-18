@@ -9,7 +9,7 @@
         <a href="mailto:naturesecur@mail.ru" style="color: black">naturesecur@mail.ru</a>
 
       </div>
-      <img src="../../assets/mylogo.png" height="42" width="42"/>
+      <img src="../../assets/mylogo2.png" height="42" width="42"/>
     </v-footer>
 
 </template>

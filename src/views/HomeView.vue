@@ -30,6 +30,10 @@
               cols="12"
               sm="3"
           >
+            <h3 class="text-center">
+              Основные услуги
+            </h3>
+
             <right-post-list
               :posts="sortedPosts"
               />
