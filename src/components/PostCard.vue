@@ -10,8 +10,8 @@
         <v-card-subtitle><span v-html="description"></span></v-card-subtitle>
         <v-img
             :src="imageURL"
-            height="auto"
-            width="auto"
+            max-height="800px"
+            max-width="800px"
             cover
         ></v-img>
 

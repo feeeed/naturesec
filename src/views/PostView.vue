@@ -11,7 +11,6 @@
 
       </post-card>
 
-      Страница {{$route.params.id}}
 
     </v-container>
   </v-main>
