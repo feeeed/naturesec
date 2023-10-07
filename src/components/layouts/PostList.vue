@@ -1,7 +1,7 @@
 <template>
   <div v-if="posts.length>0">
     <transition-group name="posts-list">
-      <post-card
+      <post-card-max
           v-for="(post,key) in posts"
 
           :key="key"
@@ -12,9 +12,9 @@
 
           :description="post.description"
 
-          :main-content="post.mainContent"
-
           :imageURL="post.imageURL"
+
+          :miniContent="post.miniContent"
 
       />
     </transition-group>
@@ -26,9 +26,9 @@
 </template>
 
 <script>
-import PostCard from "@/components/PostCard.vue";
+import PostCardMax from "@/components/PostCardMax.vue";
 export default {
-  components:{PostCard},
+  components:{PostCardMax},
   props:{
     posts:{
       type:Array,

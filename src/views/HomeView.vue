@@ -1,6 +1,29 @@
 <template>
   <div class="home">
     <v-main class="bg-grey-lighten-3">
+      <v-dialog v-model="dialogWin" width="auto">
+        <v-card>
+          <v-card-text>
+            <span class="text-red text-center">Внимание!</span>
+            <br>
+            Срок сдачи отчётности за 2023 год!
+            <br>
+            <ul>
+              <li>Форма № 2-ТП (воздух) — до 22 января</li>
+              <li>Форма 2-ТП (отходы) — до 1 февраля</li>
+              <li>Платежи — до 1 марта</li>
+              <li>Сдача декларации о плате — до 10 марта</li>
+              <li>Отчет ПЭК — до 25 марта</li>
+              <li>Экосбор — до 1 апреля</li>
+            </ul>
+          </v-card-text>
+          <v-card-actions>
+            <v-btn color="green" block @click="setDialogWin"
+            >Закрыть</v-btn
+            >
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
       <v-container>
         <v-row>
           <my-input
@@ -30,6 +53,28 @@
               cols="12"
               sm="3"
           >
+            <v-card
+               v-if="dialogWin==false"
+            class="my-4"
+            >
+              <v-card-text>
+                <span class="text-red text-center">Внимание!</span>
+                <br>
+                Срок сдачи отчётности за 2023 год!
+                <br>
+                <ul>
+                  <li>Форма № 2-ТП (воздух) — до 22 января</li>
+                  <li>Форма 2-ТП (отходы) — до 1 февраля</li>
+                  <li>Платежи — до 1 марта</li>
+                  <li>Сдача декларации о плате — до 10 марта</li>
+                  <li>Отчет ПЭК — до 25 марта</li>
+                  <li>Экосбор — до 1 апреля</li>
+                </ul>
+              </v-card-text>
+
+            </v-card>
+
+
             <h3 class="text-center">
               Основные услуги
             </h3>
@@ -59,9 +104,20 @@ import MyInput from "@/components/layouts/MyInput.vue";
 import RightPostList from "@/components/layouts/RightPostList.vue";
 
 export default {
+  data(){
+    return{
+      dialog: true,
+    }
+  },
   components: {RightPostList, MyInput,PostList},
   mounted() {
     this.fetchPosts();
+    if(localStorage.dialog) this.dialog = localStorage.dialog;
+  },
+  watch:{
+   dialog(newName){
+     localStorage.dialog = newName;
+   }
   },
   computed:{
     ...mapGetters({
@@ -75,16 +131,20 @@ export default {
       page: state => state.post.page,
       limit: state => state.post.limit,
       totalPages: state => state.post.totalPages,
+      dialogWin: state => state.post.dialogWin,
     })
   },
   methods:{
     ...mapActions({
       fetchPosts: 'fetchPosts',
       loadMorePosts: 'loadMorePosts',
+
     }),
     ...mapMutations({
       setSearchQuery: 'setSearchQuery',
       setPage:'setPage',
+      setDialogWin: 'setDialogWin',
+
     })
 
   }

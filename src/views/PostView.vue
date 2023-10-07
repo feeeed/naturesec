@@ -48,6 +48,9 @@ import PostCard from "@/components/PostCard.vue";
 }
 </script>
 
-<style lang="scss" scoped>
+<style>
 
+li {
+  list-style-type: none;
+}
 </style>

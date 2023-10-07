@@ -16,7 +16,7 @@
         ></v-img>
 
       </v-card-item>
-      <v-card-text>
+      <v-card-text class="text-h6">
         <span v-html="mainContent"></span>
 
       </v-card-text>

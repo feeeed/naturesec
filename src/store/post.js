@@ -22,6 +22,9 @@ const mutations = {
     setTotalPages(state, totalPages) {
         state.totalPages = totalPages
     },
+    setDialogWin(state){
+        state.dialogWin = false
+    }
 
 }
 
@@ -89,6 +92,7 @@ const state = () => ({
     page:1,
     limit:3,
     totalPages: 0,
+    dialogWin: true,
 })
 export default {
     mutations,

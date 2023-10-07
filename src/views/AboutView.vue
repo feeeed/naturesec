@@ -112,6 +112,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   margin-right: 25px;
   margin-left: 25px;
 
