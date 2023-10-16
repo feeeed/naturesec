@@ -1,5 +1,6 @@
 import {getPost,getPosts} from "@/services/posts.service";
 
+
 const mutations = {
     setPost(state,post){
     state.post = post
@@ -19,12 +20,15 @@ const mutations = {
     setSearchQuery(state,searchQuery){
         state.searchQuery = searchQuery
     },
+    setSelectedQuery(state,selectedQuery){
+      state.selectedQuery = selectedQuery
+    },
     setTotalPages(state, totalPages) {
         state.totalPages = totalPages
     },
     setDialogWin(state){
         state.dialogWin = false
-    }
+    },
 
 }
 
@@ -75,12 +79,21 @@ const getters = {
     post: ({post}) => post,
     posts: ({posts}) => posts,
     postsError: ({postsError}) => postsError,
+    selectedPosts(state){
+        return [...state.posts].filter(post=>post.description.includes(state.selectedQuery))
+    },
     searchPosts(state){
         return [...state.posts].filter(post=>post.title.toLowerCase().includes(state.searchQuery.toLowerCase()))
+    },
+    selectedPostsAndSearch(state,getters){
+        return getters.selectedPosts.filter(post=>post.title.toLowerCase().includes(state.searchQuery.toLowerCase()))
+
     },
     sortedPosts(state){
         return [...state.posts].filter(post=>post.description.includes('Услуги'))
     },
+
+
 
 }
 const state = () => ({
@@ -89,10 +102,16 @@ const state = () => ({
     isPostsLoading: false,
     postsError: null,
     searchQuery:'',
+    selectedQuery:'',
     page:1,
     limit:3,
     totalPages: 0,
     dialogWin: true,
+    sortOptions:[
+        {value:'Услуги',name:'Услуги'},
+        {value: 'Информация',name:'Информация'},
+        {value: '',name:'Показать все'}
+    ],
 })
 export default {
     mutations,

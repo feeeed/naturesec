@@ -25,6 +25,7 @@
         </v-card>
       </v-dialog>
       <v-container>
+
         <v-row>
           <my-input
               :model-value="searchQuery"
@@ -33,6 +34,20 @@
           >
 
           </my-input>
+          <v-row align="center" >
+            <v-container>
+              <my-select
+                  :model-value="selectedQuery"
+                  @update:model-value="setSelectedQuery"
+                  :options="sortOptions"
+              >
+
+              </my-select>
+
+
+            </v-container>
+
+          </v-row>
         </v-row>
         <v-row>
 
@@ -41,7 +56,7 @@
               sm="9"
           >
             <post-list
-              :posts="searchPosts"
+              :posts="selectedPostsAndSearch"
               v-if="!isPostsLoading"
               />
             <div v-else>Идёт загрузка...</div>
@@ -102,14 +117,16 @@ import PostList from "@/components/layouts/PostList.vue";
 import{mapGetters,mapActions,mapState,mapMutations} from "vuex";
 import MyInput from "@/components/layouts/MyInput.vue";
 import RightPostList from "@/components/layouts/RightPostList.vue";
+import MySelect from "@/components/layouts/MySelect.vue";
 
 export default {
   data(){
     return{
       dialog: true,
+
     }
   },
-  components: {RightPostList, MyInput,PostList},
+  components: {MySelect, RightPostList, MyInput,PostList},
   mounted() {
     this.fetchPosts();
     if(localStorage.dialog) this.dialog = localStorage.dialog;
@@ -121,17 +138,20 @@ export default {
   },
   computed:{
     ...mapGetters({
-      searchPosts:'searchPosts',
       sortedPosts:'sortedPosts',
+      selectedPostsAndSearch:'selectedPostsAndSearch',
+
     }),
     ...mapState({
       posts:state => state.post.posts,
       isPostsLoading:state => state.post.isPostsLoading,
       searchQuery:state => state.post.searchQuery,
+      selectedQuery:state => state.post.selectedQuery,
       page: state => state.post.page,
       limit: state => state.post.limit,
       totalPages: state => state.post.totalPages,
       dialogWin: state => state.post.dialogWin,
+      sortOptions:state => state.post.sortOptions,
     })
   },
   methods:{
@@ -144,6 +164,7 @@ export default {
       setSearchQuery: 'setSearchQuery',
       setPage:'setPage',
       setDialogWin: 'setDialogWin',
+      setSelectedQuery:'setSelectedQuery',
 
     })
 
