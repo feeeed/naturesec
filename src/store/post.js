@@ -90,7 +90,7 @@ const getters = {
 
     },
     sortedPosts(state){
-        return [...state.posts].filter(post=>post.description.includes('Услуги'))
+        return [...state.posts].filter(post=>post.tags.includes('Услуги'))
     },
 
 

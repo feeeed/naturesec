@@ -51,14 +51,12 @@
         >
           О нас
         </v-btn>
-        <v-divider class="border-opacity-50" vertical></v-divider>
         <v-btn
             variant="text"
             @click="$router.push(`/main`)"
         >
           Информация
         </v-btn>
-        <v-divider class="border-opacity-50" vertical></v-divider>
         <v-btn
             variant="text"
             @click="$router.push(`/about`)"

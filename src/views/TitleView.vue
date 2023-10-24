@@ -46,21 +46,25 @@
 
           <v-expansion-panels variant="inset">
             <v-expansion-panel
+                color="#C8E6C9"
                 title="Title"
                 text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
             >
             </v-expansion-panel>
             <v-expansion-panel
+                color="#C8E6C9"
                 title="Title2"
                 text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
             >
             </v-expansion-panel>
             <v-expansion-panel
+                color="#C8E6C9"
                 title="Title3"
                 text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
             >
             </v-expansion-panel>
             <v-expansion-panel
+                color="#C8E6C9"
                 title="Title4"
                 text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
             >
