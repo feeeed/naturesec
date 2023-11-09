@@ -1,7 +1,9 @@
 <template>
   <v-main class="bg-grey-lighten-3">
-    <v-container>
+    <v-container
+    >
       <post-card
+
           :title="post.title"
           :description="post.description"
           :main-content="post.mainContent"
@@ -50,7 +52,13 @@ import PostCard from "@/components/PostCard.vue";
 
 <style>
 
-li {
-  list-style-type: none;
+ol {
+  padding-left: 40px;
+}
+ul{
+  padding-left: 40px;
+}
+p{
+  line-height: 110%;
 }
 </style>

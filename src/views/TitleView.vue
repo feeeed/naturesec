@@ -2,7 +2,6 @@
   <div class="welcome">
     <v-main class="bg-grey-lighten-3">
       <v-container class="v-container--fluid">
-
       <v-row class="align-content-center justify-center align-center flex-wrap-reverse bg-green-lighten-3 py-14">
         <v-col class="ma-10 ">
           <v-sheet color="green-lighten-3" class="text-h3 py-4 ">
@@ -18,6 +17,7 @@
 
         </v-col>
         <v-col class="d-flex justify-center flex-grow-1 flex-shrink-0">
+
           <img src="./../assets/imgrig.png" style="max-width: 100%">
         </v-col>
 
@@ -46,25 +46,25 @@
 
           <v-expansion-panels variant="inset">
             <v-expansion-panel
-                color="#C8E6C9"
+
                 title="Title"
                 text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
             >
             </v-expansion-panel>
             <v-expansion-panel
-                color="#C8E6C9"
+
                 title="Title2"
                 text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
             >
             </v-expansion-panel>
             <v-expansion-panel
-                color="#C8E6C9"
+                
                 title="Title3"
                 text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
             >
             </v-expansion-panel>
             <v-expansion-panel
-                color="#C8E6C9"
+
                 title="Title4"
                 text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
             >

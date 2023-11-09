@@ -80,7 +80,7 @@ const getters = {
     posts: ({posts}) => posts,
     postsError: ({postsError}) => postsError,
     selectedPosts(state){
-        return [...state.posts].filter(post=>post.description.includes(state.selectedQuery))
+        return [...state.posts].filter(post=>post.tags.includes(state.selectedQuery))
     },
     searchPosts(state){
         return [...state.posts].filter(post=>post.title.toLowerCase().includes(state.searchQuery.toLowerCase()))
