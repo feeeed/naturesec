@@ -20,11 +20,7 @@
 
           <img src="./../assets/imgrig.png" style="max-width: 100%">
         </v-col>
-
-
       </v-row>
-
-
       </v-container>
       <v-container class="my-12">
         <v-row class="align-center text-center justify-center">
@@ -38,7 +34,25 @@
               />
         </v-row>
 
+
+
       </v-container>
+      <v-sheet
+          height="200px"
+          color="gray"
+          class="d-flex text-center align-center justify-space-around rounded mx-11"
+      >
+        <h2>Больше о наших услугах на отдельной стрнице</h2>
+        <v-btn
+            variant="flat"
+            color="green-lighten-2"
+            @click="$router.push(`/main`)"
+
+        >
+          перейти
+
+        </v-btn>
+      </v-sheet>
       <v-divider></v-divider>
       <v-container>
         <v-row class="my-12 text-center justify-center">
@@ -47,7 +61,7 @@
           <v-expansion-panels variant="inset">
             <v-expansion-panel
 
-                title="Title"
+                title="Почему выбирают нас"
                 text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
             >
             </v-expansion-panel>
@@ -58,7 +72,7 @@
             >
             </v-expansion-panel>
             <v-expansion-panel
-                
+
                 title="Title3"
                 text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
             >

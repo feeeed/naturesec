@@ -20,17 +20,17 @@
         <span v-html="mainContent"></span>
 
       </v-card-text>
-    <v-card-actions>
-      <v-btn
-          color="green-lighten-2"
-          variant="text"
-          @click="$router.push(`/posts/${_id}`)"
 
-      >
-        Подробнее
-      </v-btn>
-    </v-card-actions>
   </v-card>
+  </v-container>
+  <v-container class="text-center">
+    <v-btn
+        size="large"
+        color="green-lighten-2"
+        variant="tonal"
+        @click="$router.push(`/main`)">
+      Назад
+    </v-btn>
   </v-container>
 </template>
 

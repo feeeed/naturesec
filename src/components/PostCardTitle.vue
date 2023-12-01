@@ -1,8 +1,8 @@
 <template>
   <v-col>
-
+    <v-hover v-slot="{ isHovering, props }">
   <v-card
-      class="mx-auto"
+      class="mx-auto" v-bind="props"
       max-width="400"
   >
     <v-img
@@ -17,21 +17,28 @@
       {{title}}
     </v-card-title>
 
-    <v-card-subtitle>
+    <v-card-subtitle
+    class="py-4"
+    >
       <span v-html="description"></span>
     </v-card-subtitle>
 
-    <v-card-actions>
+
+    <v-overlay
+        :model-value="isHovering"
+        contained
+        scrim="#036358"
+        class="align-center justify-center"
+    >
       <v-btn
-          color="green-lighten-2"
-          variant="text"
+          variant="flat"
           @click="$router.push(`/posts/${_id}`)"
 
-      >
-        Подробнее
-      </v-btn>
-    </v-card-actions>
+      >Подробнее</v-btn>
+
+    </v-overlay>
   </v-card>
+    </v-hover>
   </v-col>
 </template>
 
