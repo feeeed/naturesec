@@ -2,7 +2,7 @@
   <div class="welcome">
     <v-main class="bg-grey-lighten-3">
       <v-container class="v-container--fluid">
-      <v-row class="align-content-center justify-center align-center flex-wrap-reverse bg-green-lighten-3 py-14">
+      <v-row class="align-content-center justify-center align-center flex-wrap-reverse bg-green-lighten-3 py-4">
         <v-col class="ma-10 ">
           <v-sheet color="green-lighten-3" class="text-h3 py-4 ">
             Лидер региона в области предоставления услуг экологического назначения.
@@ -33,8 +33,6 @@
               :posts="sortedPosts"
               />
         </v-row>
-
-
 
       </v-container>
       <v-sheet

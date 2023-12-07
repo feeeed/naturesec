@@ -25,23 +25,22 @@
         </v-card>
       </v-dialog>
       <v-container>
-
         <v-row>
           <my-input
               :model-value="searchQuery"
               @update:model-value="setSearchQuery"
               placeholder="Поиск"
           >
-
           </my-input>
-          <v-row align="center" >
+          <v-row
+          class="text-center align-center justify-center"
+          >
             <v-container>
               <my-select
                   :model-value="selectedQuery"
                   @update:model-value="setSelectedQuery"
                   :options="sortOptions"
               >
-
               </my-select>
 
 
