@@ -2,8 +2,7 @@
   <div class="welcome">
     <v-main class="bg-grey-lighten-3">
       <v-container class="v-container--fluid">
-
-      <v-row class="align-content-center justify-center align-center flex-wrap-reverse bg-green-lighten-3 py-14">
+      <v-row class="align-content-center justify-center align-center flex-wrap-reverse bg-green-lighten-3 py-4">
         <v-col class="ma-10 ">
           <v-sheet color="green-lighten-3" class="text-h3 py-4 ">
             Лидер региона в области предоставления услуг экологического назначения.
@@ -18,10 +17,9 @@
 
         </v-col>
         <v-col class="d-flex justify-center flex-grow-1 flex-shrink-0">
+
           <img src="./../assets/imgrig.png" style="max-width: 100%">
         </v-col>
-
-
       </v-row>
 
 
@@ -39,6 +37,24 @@
         </v-row>
 
       </v-container>
+
+      <v-sheet
+          height="200px"
+          color="gray"
+          class="d-flex text-center align-center justify-space-around rounded mx-11"
+      >
+        <h2>Больше о наших услугах на отдельной стрнице</h2>
+        <v-btn
+            variant="flat"
+            color="green-lighten-2"
+            @click="$router.push(`/main`)"
+
+        >
+          перейти
+
+        </v-btn>
+      </v-sheet>
+
       <v-divider></v-divider>
       <v-container>
         <v-row class="my-12 text-center justify-center">
@@ -46,21 +62,27 @@
 
           <v-expansion-panels variant="inset">
             <v-expansion-panel
-                title="Title"
+
+
+                title="Почему выбирают нас"
+
                 text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
             >
             </v-expansion-panel>
             <v-expansion-panel
+
                 title="Title2"
                 text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
             >
             </v-expansion-panel>
             <v-expansion-panel
+
                 title="Title3"
                 text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
             >
             </v-expansion-panel>
             <v-expansion-panel
+
                 title="Title4"
                 text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
             >

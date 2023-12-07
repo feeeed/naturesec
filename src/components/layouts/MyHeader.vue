@@ -21,6 +21,12 @@
             title="Контакты"
             value="about"
         ></v-list-item>
+        <v-list-item
+            @click="$router.push(`/contacts`)"
+            prepend-icon="mdi-forum"
+            title="О нас"
+            value="contacts"
+        ></v-list-item>
       </v-list>
     </v-navigation-drawer>
     <v-app-bar
@@ -39,6 +45,12 @@
             @click="$router.push(`/`)"
         > Природоохранный центр</v-btn>
         <v-spacer></v-spacer>
+        <v-btn
+            variant="text"
+            @click="$router.push(`/contacts`)"
+        >
+          О нас
+        </v-btn>
         <v-btn
             variant="text"
             @click="$router.push(`/main`)"

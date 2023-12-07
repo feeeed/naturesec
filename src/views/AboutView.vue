@@ -1,7 +1,7 @@
 <template>
   <v-main class="bg-grey-lighten-3">
     <div class="about-main">
-      <div class="about-title">
+      <div class="about-title text-center">
         <h1>Контакты</h1>
       </div>
 
@@ -112,6 +112,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   margin-right: 25px;
   margin-left: 25px;
 
@@ -156,5 +157,8 @@ export default {
 .cards-info{
   display: flex;
   flex-direction: row;
+}
+li {
+  list-style-type: none;
 }
 </style>
