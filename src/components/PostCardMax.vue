@@ -3,9 +3,6 @@
     <v-card
         class="mx-auto overflow-hidden"
         flat
-
-
-
     >
       <v-card-item>
         <v-card-title>{{ title }}</v-card-title>
@@ -71,6 +68,5 @@ export default {
 </script>
 
 <style>
-
 
 </style>
