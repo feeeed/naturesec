@@ -18,6 +18,9 @@ const mutations = {
     state.postsError = error
     },
     setSearchQuery(state,searchQuery){
+        if(searchQuery === undefined){
+            searchQuery=''
+        }
         state.searchQuery = searchQuery
     },
     setSelectedQuery(state,selectedQuery){
@@ -112,6 +115,17 @@ const state = () => ({
         {value: 'Информация',name:'Информация'},
         {value: '',name:'Показать все'}
     ],
+    buttonsOption:[
+        {value:'ПДВ', name:'ПДВ'},
+        {value: 'СЗЗ',name:'СЗЗ'},
+        {value: 'НДС',name:'НДС'},
+        {value: 'НМУ',name:'НМУ'},
+        {value: 'Инвентаризация',name:'Инвенатризация'},
+        {value: 'Инвентаризация',name:'Инвенатризация'},
+        {value: 'Инвентаризация',name:'Инвенатризация'},
+
+    ]
+
 })
 export default {
     mutations,

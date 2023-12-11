@@ -25,13 +25,37 @@
         </v-card>
       </v-dialog>
       <v-container>
-        <v-row>
+        <v-row class="d-flex flex-column">
           <my-input
               :model-value="searchQuery"
               @update:model-value="setSearchQuery"
-              placeholder="Поиск"
           >
           </my-input>
+          <v-row class="justify-center text-center align-center pt-4">
+          <v-slide-group
+              @update:model-value="setSearchQuery"
+
+          >
+            <v-slide-group-item
+                v-for="(option,key) in buttonsOption"
+                :key="key"
+                :value="option.value"
+
+                v-slot="{ isSelected, toggle }"
+
+            >
+              <v-btn
+                  class="ma-2"
+                  rounded
+                  :color="isSelected ? 'green' : undefined"
+                  @click="toggle"
+              >
+                {{ option.name }}
+              </v-btn>
+            </v-slide-group-item>
+          </v-slide-group>
+
+          </v-row>
           <v-row
           class="text-center align-center justify-center"
           >
@@ -49,10 +73,41 @@
           </v-row>
         </v-row>
         <v-row>
-
           <v-col
               cols="12"
-              sm="9"
+              sm="3"
+          >
+            <v-sheet
+                elevation="10"
+                rounded="xl"
+            >
+              <v-sheet
+                  rounded="t-xl"
+              >
+              </v-sheet>
+
+              <div class="pa-4">
+                <v-chip-group
+                    selected-class="text-primary"
+                    column
+                    @update:model-value="setSearchQuery"
+
+                >
+                  <v-chip
+                      v-for="(option,key) in buttonsOption"
+                      :key="key"
+                      :value="option.value"
+                  >
+                    {{ option.name }}
+                  </v-chip>
+                </v-chip-group>
+              </div>
+            </v-sheet>
+
+          </v-col>
+          <v-col
+              cols="12"
+              sm="6"
           >
             <post-list
               :posts="selectedPostsAndSearch"
@@ -60,9 +115,7 @@
               />
             <div v-else>Идёт загрузка...</div>
 
-
           </v-col>
-
           <v-col
               cols="12"
               sm="3"
@@ -151,6 +204,7 @@ export default {
       totalPages: state => state.post.totalPages,
       dialogWin: state => state.post.dialogWin,
       sortOptions:state => state.post.sortOptions,
+      buttonsOption:state => state.post.buttonsOption,
     })
   },
   methods:{

@@ -3,17 +3,18 @@
       <v-card
           class="mx-11 my-4"
 
-          width="400"
-          height="300"
+          width="420"
+          height="330"
 
       >
 
 
         <div class="d-flex flex-column flex-nowrap justify-space-between">
           <v-img
+              class="mx-2"
               :src="img"
-              max-height="200px"
-              max-width="400px"
+              min-height="200px"
+              min-width="400px"
           ></v-img>
           <div>
             <v-card-title>
@@ -39,8 +40,8 @@
               <v-card
                   v-if="reveal"
                   class="v-card--reveal justify-space-between"
-                  height="300px"
-                  width="400px"
+                  height="350px"
+                  width="420px"
               >
                   <v-card-text class="pb-0 my-4">
                     <p class="text-h4 text--primary">
