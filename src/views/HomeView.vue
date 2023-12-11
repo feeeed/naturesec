@@ -120,6 +120,7 @@
               cols="12"
               sm="3"
           >
+
             <v-card
                v-if="dialogWin==false"
             class="my-4"
@@ -140,6 +141,7 @@
               </v-card-text>
 
             </v-card>
+
 
 
             <h3 class="text-center">

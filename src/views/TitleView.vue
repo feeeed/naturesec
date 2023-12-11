@@ -21,6 +21,8 @@
           <img src="./../assets/imgrig.png" style="max-width: 100%">
         </v-col>
       </v-row>
+
+
       </v-container>
       <v-container class="my-12">
         <v-row class="align-center text-center justify-center">
@@ -35,6 +37,7 @@
         </v-row>
 
       </v-container>
+
       <v-sheet
           height="200px"
           color="gray"
@@ -51,6 +54,7 @@
 
         </v-btn>
       </v-sheet>
+
       <v-divider></v-divider>
       <v-container>
         <v-row class="my-12 text-center justify-center">
@@ -59,7 +63,9 @@
           <v-expansion-panels variant="inset">
             <v-expansion-panel
 
+
                 title="Почему выбирают нас"
+
                 text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
             >
             </v-expansion-panel>
