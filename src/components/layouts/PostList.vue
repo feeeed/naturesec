@@ -21,6 +21,7 @@
 
   </div>
   <h2 v-else style="color: red">
+    <v-progress-linear indeterminate color="green"></v-progress-linear>
     Запись не найдена, попробуйте дать более точное описание
   </h2>
 </template>

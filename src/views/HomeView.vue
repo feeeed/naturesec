@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <v-main class="bg-grey-lighten-3">
-      <v-dialog v-model="dialogWin" width="auto">
+      <v-dialog v-if="dialog2==true" v-model="dialog2" width="auto">
         <v-card>
           <v-card-text>
             <span class="text-red text-center">Внимание!</span>
@@ -31,46 +31,30 @@
               @update:model-value="setSearchQuery"
           >
           </my-input>
-          <v-row class="justify-center text-center align-center pt-4">
-          <v-slide-group
-              @update:model-value="setSearchQuery"
+<!--          <v-row class="justify-center text-center align-center pt-4">-->
+<!--          <v-slide-group-->
+<!--              @update:model-value="setSearchQuery"-->
 
-          >
-            <v-slide-group-item
-                v-for="(option,key) in buttonsOption"
-                :key="key"
-                :value="option.value"
+<!--          >-->
+<!--            <v-slide-group-item-->
+<!--                v-for="(option,key) in buttonsOption"-->
+<!--                :key="key"-->
+<!--                :value="option.value"-->
 
-                v-slot="{ isSelected, toggle }"
+<!--                v-slot="{ isSelected, toggle }"-->
 
-            >
-              <v-btn
-                  class="ma-2"
-                  rounded
-                  :color="isSelected ? 'green' : undefined"
-                  @click="toggle"
-              >
-                {{ option.name }}
-              </v-btn>
-            </v-slide-group-item>
-          </v-slide-group>
-
-          </v-row>
-          <v-row
-          class="text-center align-center justify-center"
-          >
-            <v-container>
-              <my-select
-                  :model-value="selectedQuery"
-                  @update:model-value="setSelectedQuery"
-                  :options="sortOptions"
-              >
-              </my-select>
-
-
-            </v-container>
-
-          </v-row>
+<!--            >-->
+<!--              <v-btn-->
+<!--                  class="ma-2"-->
+<!--                  rounded-->
+<!--                  :color="isSelected ? 'green' : undefined"-->
+<!--                  @click="toggle"-->
+<!--              >-->
+<!--                {{ option.name }}-->
+<!--              </v-btn>-->
+<!--            </v-slide-group-item>-->
+<!--          </v-slide-group>-->
+<!--          </v-row>-->
         </v-row>
         <v-row>
           <v-col
@@ -81,14 +65,10 @@
                 elevation="10"
                 rounded="xl"
             >
-              <v-sheet
-                  rounded="t-xl"
-              >
-              </v-sheet>
-
-              <div class="pa-4">
+              <div class="pa-4 text-center text-h6">
+                Быстрый поиск
                 <v-chip-group
-                    selected-class="text-primary"
+                    color="green"
                     column
                     @update:model-value="setSearchQuery"
 
@@ -102,6 +82,18 @@
                   </v-chip>
                 </v-chip-group>
               </div>
+              <v-divider class="border-opacity-50"></v-divider>
+              <div class="px-4 pt-4 text-center text-h6">
+                  Сортировка
+                </div>
+              <div class="pa-4">
+                <my-select
+                    :model-value="selectedQuery"
+                    @update:model-value="setSelectedQuery"
+                    :options="sortOptions"
+                >
+                </my-select>
+              </div>
             </v-sheet>
 
           </v-col>
@@ -113,7 +105,13 @@
               :posts="selectedPostsAndSearch"
               v-if="!isPostsLoading"
               />
-            <div v-else>Идёт загрузка...</div>
+            <div v-else>Идёт загрузка...
+              <v-progress-linear
+                  indeterminate
+                  color="green"
+              ></v-progress-linear>
+
+            </div>
 
           </v-col>
           <v-col
@@ -122,7 +120,7 @@
           >
 
             <v-card
-               v-if="dialogWin==false"
+               v-if="dialog2==false || dialog2=='false'"
             class="my-4"
             >
               <v-card-text>
@@ -176,18 +174,18 @@ import MySelect from "@/components/layouts/MySelect.vue";
 export default {
   data(){
     return{
-      dialog: true,
+      dialog2: true
 
     }
   },
   components: {MySelect, RightPostList, MyInput,PostList},
   mounted() {
     this.fetchPosts();
-    if(localStorage.dialog) this.dialog = localStorage.dialog;
+    if(localStorage.dialog2) this.dialog2 = localStorage.dialog2;
   },
   watch:{
-   dialog(newName){
-     localStorage.dialog = newName;
+   dialog2(dialog){
+     localStorage.dialog2 = dialog;
    }
   },
   computed:{

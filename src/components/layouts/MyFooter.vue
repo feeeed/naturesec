@@ -8,8 +8,11 @@
             variant="text"
             class="mx-2"
             rounded="xl"
+            @click="$router.push(link.value)"
         >
-          {{ link }}
+          {{ link.name }}
+
+
         </v-btn>
       </v-row>
       <v-row>
@@ -35,8 +38,8 @@
           <a href="mailto:naturesecur@mail.ru" style="color: black">naturesecur@mail.ru</a>
         </v-col>
         <v-spacer></v-spacer>
-        <v-col>
-          <img src="../../assets/mylogo2.png" height="89" width="89"/>
+        <v-col class="pt-8">
+          <img src="../../assets/logov2.png" height="65" width="75"/>
         </v-col>
       </v-row>
 
@@ -47,7 +50,13 @@
 <script>
 export default {
   data: () => ({
-    links: ['Home', 'About Us', 'Team', 'Services', 'Blog', 'Contact Us'],
+    links: [
+      {value:'/',name:'Главная'},
+      {value:'/main',name:'Информация'},
+      {value:'/about',name:'Контакты'},
+      {value:'/contacts',name:'О нас'},
+
+    ],
   }),
 }
 </script>
