@@ -32,7 +32,6 @@ const routes = [
     name: 'О нас',
     component: () => import('@/views/ContactsView.vue')
   },
-
 ]
 
 const router = createRouter({

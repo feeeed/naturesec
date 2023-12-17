@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <v-main class="bg-grey-lighten-3">
+
       <v-dialog v-if="dialog2==true" v-model="dialog2" width="auto">
+
         <v-card>
           <v-card-text>
             <span class="text-red text-center">Внимание!</span>
@@ -55,6 +57,7 @@
 <!--            </v-slide-group-item>-->
 <!--          </v-slide-group>-->
 <!--          </v-row>-->
+
         </v-row>
         <v-row>
           <v-col
@@ -120,7 +123,9 @@
           >
 
             <v-card
+
                v-if="dialog2==false || dialog2=='false'"
+
             class="my-4"
             >
               <v-card-text>
@@ -175,17 +180,18 @@ export default {
   data(){
     return{
       dialog2: true
-
     }
   },
   components: {MySelect, RightPostList, MyInput,PostList},
   mounted() {
     this.fetchPosts();
+
     if(localStorage.dialog2) this.dialog2 = localStorage.dialog2;
   },
   watch:{
    dialog2(dialog){
      localStorage.dialog2 = dialog;
+
    }
   },
   computed:{
@@ -205,6 +211,7 @@ export default {
       dialogWin: state => state.post.dialogWin,
       sortOptions:state => state.post.sortOptions,
       buttonsOption:state => state.post.buttonsOption,
+
     })
   },
   methods:{

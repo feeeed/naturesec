@@ -115,6 +115,7 @@ const state = () => ({
         {value: 'Информация',name:'Информация'},
         {value: '',name:'Показать все'}
     ],
+
     buttonsOption:[
         {value:'ПДВ', name:'ПДВ'},
         {value: 'СЗЗ',name:'СЗЗ'},
@@ -123,6 +124,7 @@ const state = () => ({
         {value: 'ДВОС',name:'ДВОС'},
         {value: 'ЗГУ',name:'ЗГУ'},
     ]
+
 
 })
 export default {

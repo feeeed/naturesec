@@ -59,7 +59,6 @@
 <!--      <v-container>-->
 <!--        <v-row class="my-12 text-center justify-center">-->
 <!--          <h2 class="text-h4 font-weight-black py-4 text-black">Отвечаем на вопросы</h2>-->
-
 <!--          <v-expansion-panels variant="inset">-->
 <!--            <v-expansion-panel-->
 

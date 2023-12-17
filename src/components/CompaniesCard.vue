@@ -2,8 +2,6 @@
   <div>
       <v-card
           class="mx-auto my-4"
-
-
       >
         <div class="d-flex flex-column flex-nowrap justify-space-between">
           <v-img
@@ -11,6 +9,7 @@
               :src="img"
               height="200px"
               width="400px"
+
           ></v-img>
           <div>
             <v-card-title>
@@ -28,6 +27,8 @@
             </v-card-actions>
           </div>
 
+
+
           </div>
 
             <v-expand-transition>
@@ -35,6 +36,7 @@
                   v-if="reveal"
                   class="v-card--reveal justify-space-between"
                   style="height: 100%"
+
               >
                   <v-card-text class="pb-0 my-4">
                     <p class="text-h4 text--primary">
@@ -55,7 +57,6 @@
 
               </v-card>
             </v-expand-transition>
-
       </v-card>
 
   </div>
