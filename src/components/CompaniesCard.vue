@@ -1,19 +1,15 @@
 <template>
   <div>
       <v-card
-          class="mx-11 my-4"
-
-          width="400"
-          height="300"
-
+          class="mx-auto my-4"
       >
-
-
         <div class="d-flex flex-column flex-nowrap justify-space-between">
           <v-img
+              class="mx-2"
               :src="img"
-              max-height="200px"
-              max-width="400px"
+              height="200px"
+              width="400px"
+
           ></v-img>
           <div>
             <v-card-title>
@@ -39,8 +35,8 @@
               <v-card
                   v-if="reveal"
                   class="v-card--reveal justify-space-between"
-                  height="300px"
-                  width="400px"
+                  style="height: 100%"
+
               >
                   <v-card-text class="pb-0 my-4">
                     <p class="text-h4 text--primary">
@@ -61,16 +57,6 @@
 
               </v-card>
             </v-expand-transition>
-
-
-
-
-
-
-
-
-
-
       </v-card>
 
   </div>

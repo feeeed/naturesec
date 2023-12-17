@@ -13,6 +13,7 @@ const vuetify = createVuetify({
     components,
     directives,
 })
+
 const settings = {
     apiKey: '5bdca90c-833b-441b-8ffc-a1316bb6b874',
     lang: 'ru_RU',

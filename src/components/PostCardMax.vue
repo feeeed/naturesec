@@ -9,6 +9,7 @@
 
         <v-card-subtitle><span v-html="description"></span></v-card-subtitle>
         <v-img
+            v-if="imageURL"
             :src="imageURL"
             max-height="800px"
             max-width="800px"

@@ -1,5 +1,19 @@
 <template>
   <v-main class="bg-grey-lighten-3">
+    <v-parallax
+        scale="0.7"
+        :src="require('../assets/XXXL.webp')"
+        style="height: 400px"
+    >
+      <div class="d-flex flex-column fill-height justify-center align-center text-white">
+        <h1 class="title-text text-h2 font-weight-bold mb-4">
+          Офис в центре города
+        </h1>
+        <h4 class="subheading text-green-lighten-3">
+          Посмотрите на интерактивной карте!
+        </h4>
+      </div>
+    </v-parallax>
     <div class="about-main">
       <div class="about-title text-center">
         <h1>Контакты</h1>

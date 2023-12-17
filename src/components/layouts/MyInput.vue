@@ -5,7 +5,6 @@
       @input="updateInput"
       density="compact"
       variant="solo"
-      label="Поиск по базе"
       append-inner-icon="mdi-magnify"
       single-line
       hide-details
