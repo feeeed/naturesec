@@ -1,20 +1,16 @@
 <template>
   <div>
       <v-card
-          class="mx-11 my-4"
+          class="mx-auto my-4"
 
-          width="420"
-          height="330"
 
       >
-
-
         <div class="d-flex flex-column flex-nowrap justify-space-between">
           <v-img
               class="mx-2"
               :src="img"
-              min-height="200px"
-              min-width="400px"
+              height="200px"
+              width="400px"
           ></v-img>
           <div>
             <v-card-title>
@@ -32,16 +28,13 @@
             </v-card-actions>
           </div>
 
-
-
           </div>
 
             <v-expand-transition>
               <v-card
                   v-if="reveal"
                   class="v-card--reveal justify-space-between"
-                  height="350px"
-                  width="420px"
+                  style="height: 100%"
               >
                   <v-card-text class="pb-0 my-4">
                     <p class="text-h4 text--primary">
@@ -62,15 +55,6 @@
 
               </v-card>
             </v-expand-transition>
-
-
-
-
-
-
-
-
-
 
       </v-card>
 

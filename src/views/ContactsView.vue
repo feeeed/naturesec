@@ -45,7 +45,7 @@
       <h2 class="text-center py-4">
         Нам доверяют
       </h2>
-      <v-row class="text-center justify-center py-4">
+      <v-row class="text-center justify-space-around py-4 ">
 <companies-card
 v-for="(card,key) in cards"
 :key="key"

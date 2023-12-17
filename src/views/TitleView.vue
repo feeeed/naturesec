@@ -41,7 +41,7 @@
       <v-sheet
           height="200px"
           color="gray"
-          class="d-flex text-center align-center justify-space-around rounded mx-11"
+          class="d-flex text-center align-center justify-space-around rounded mx-11 mb-3"
       >
         <h2>Больше о наших услугах на отдельной стрнице</h2>
         <v-btn
@@ -56,41 +56,41 @@
       </v-sheet>
 
       <v-divider></v-divider>
-      <v-container>
-        <v-row class="my-12 text-center justify-center">
-          <h2 class="text-h4 font-weight-black py-4 text-black">Отвечаем на вопросы</h2>
+<!--      <v-container>-->
+<!--        <v-row class="my-12 text-center justify-center">-->
+<!--          <h2 class="text-h4 font-weight-black py-4 text-black">Отвечаем на вопросы</h2>-->
 
-          <v-expansion-panels variant="inset">
-            <v-expansion-panel
+<!--          <v-expansion-panels variant="inset">-->
+<!--            <v-expansion-panel-->
 
 
-                title="Почему выбирают нас"
+<!--                title="Почему выбирают нас"-->
 
-                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
-            >
-            </v-expansion-panel>
-            <v-expansion-panel
+<!--                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"-->
+<!--            >-->
+<!--            </v-expansion-panel>-->
+<!--            <v-expansion-panel-->
 
-                title="Title2"
-                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
-            >
-            </v-expansion-panel>
-            <v-expansion-panel
+<!--                title="Title2"-->
+<!--                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"-->
+<!--            >-->
+<!--            </v-expansion-panel>-->
+<!--            <v-expansion-panel-->
 
-                title="Title3"
-                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
-            >
-            </v-expansion-panel>
-            <v-expansion-panel
+<!--                title="Title3"-->
+<!--                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"-->
+<!--            >-->
+<!--            </v-expansion-panel>-->
+<!--            <v-expansion-panel-->
 
-                title="Title4"
-                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"
-            >
-            </v-expansion-panel>
-          </v-expansion-panels>
-        </v-row>
+<!--                title="Title4"-->
+<!--                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"-->
+<!--            >-->
+<!--            </v-expansion-panel>-->
+<!--          </v-expansion-panels>-->
+<!--        </v-row>-->
 
-      </v-container>
+<!--      </v-container>-->
     </v-main>
   </div>
 
