@@ -2,8 +2,7 @@
   <div class="home">
     <v-main class="bg-grey-lighten-3">
 
-      <v-dialog v-if="dialog2==true" v-model="dialog2" width="auto">
-
+      <v-dialog v-model="dialog2" width="auto">
         <v-card>
           <v-card-text>
             <span class="text-red text-center">Внимание!</span>
@@ -20,20 +19,14 @@
             </ul>
           </v-card-text>
           <v-card-actions>
-            <v-btn color="green" block @click="setDialogWin"
+            <v-btn color="green" block @click="dialog2=false"
             >Закрыть</v-btn
             >
           </v-card-actions>
         </v-card>
       </v-dialog>
       <v-container>
-        <v-row class="d-flex flex-column">
-          <my-input
-              :model-value="searchQuery"
-              @update:model-value="setSearchQuery"
-          >
-          </my-input>
-<!--          <v-row class="justify-center text-center align-center pt-4">-->
+         <!-- <v-row class="justify-center text-center align-center pt-4">-->
 <!--          <v-slide-group-->
 <!--              @update:model-value="setSearchQuery"-->
 
@@ -56,17 +49,21 @@
 <!--              </v-btn>-->
 <!--            </v-slide-group-item>-->
 <!--          </v-slide-group>-->
-<!--          </v-row>-->
-
-        </v-row>
+<!--          </v-row> -->
         <v-row>
           <v-col
               cols="12"
-              sm="3"
+              sm="2"
+              class="pt-7"
           >
+          <my-input
+              :model-value="searchQuery"
+              @update:model-value="setSearchQuery"
+          >
+          </my-input>
             <v-sheet
-                elevation="10"
-                rounded="xl"
+                elevation="1"
+                :rounded= true
             >
               <div class="pa-4 text-center text-h6">
                 Быстрый поиск
@@ -98,35 +95,12 @@
                 </my-select>
               </div>
             </v-sheet>
-
-          </v-col>
-          <v-col
-              cols="12"
-              sm="6"
-          >
-            <post-list
-              :posts="selectedPostsAndSearch"
-              v-if="!isPostsLoading"
-              />
-            <div v-else>Идёт загрузка...
-              <v-progress-linear
-                  indeterminate
-                  color="green"
-              ></v-progress-linear>
-
-            </div>
-
-          </v-col>
-          <v-col
-              cols="12"
-              sm="3"
-          >
-
             <v-card
 
-               v-if="dialog2==false || dialog2=='false'"
+               v-if="dialog2==false"
 
             class="my-4"
+            :rounded=true
             >
               <v-card-text>
                 <span class="text-red text-center">Внимание!</span>
@@ -142,24 +116,26 @@
                   <li>Экосбор — до 1 апреля</li>
                 </ul>
               </v-card-text>
-
             </v-card>
 
-
-
-            <h3 class="text-center">
-              Основные услуги
-            </h3>
-
-            <right-post-list
-              :posts="sortedPosts"
-              />
-
-
-
-
-
           </v-col>
+          <v-col
+              cols="12"
+              sm="10"
+          >
+            <post-list
+              :posts="selectedPostsAndSearch"
+              v-if="!isPostsLoading"
+              />
+            <div v-else>Идёт загрузка...
+              <v-progress-linear
+                  indeterminate
+                  color="green"
+              ></v-progress-linear>
+
+            </div>
+          </v-col>
+          
         </v-row>
       </v-container>
 
@@ -173,30 +149,28 @@
 import PostList from "@/components/layouts/PostList.vue";
 import{mapGetters,mapActions,mapState,mapMutations} from "vuex";
 import MyInput from "@/components/layouts/MyInput.vue";
-import RightPostList from "@/components/layouts/RightPostList.vue";
 import MySelect from "@/components/layouts/MySelect.vue";
 
 export default {
   data(){
     return{
-      dialog2: true
+      dialog2: undefined
     }
   },
-  components: {MySelect, RightPostList, MyInput,PostList},
+  components: {MySelect, MyInput,PostList},
   mounted() {
     this.fetchPosts();
-
-    if(localStorage.dialog2) this.dialog2 = localStorage.dialog2;
+    this.dialog2 = true;
+    if(localStorage.dialog2) this.dialog2 = JSON.parse(localStorage.dialog2);
   },
   watch:{
    dialog2(dialog){
-     localStorage.dialog2 = dialog;
+     localStorage.dialog2 = JSON.stringify(dialog);
 
    }
   },
   computed:{
     ...mapGetters({
-      sortedPosts:'sortedPosts',
       selectedPostsAndSearch:'selectedPostsAndSearch',
 
     }),

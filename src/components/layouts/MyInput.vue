@@ -4,9 +4,11 @@
       :value="modelValue"
       @input="updateInput"
       density="compact"
+      label="Поиск по базе"
       variant="solo"
       append-inner-icon="mdi-magnify"
       single-line
+      rounded="x"
       hide-details
   ></v-text-field>
   </div>
@@ -28,9 +30,8 @@ export default {
 
 <style scoped>
 .input123{
-  width: 100%;
-  padding: 10px 15px;
-  margin-top: 15px;
+  padding-bottom: 16px;
+  
 }
 
 </style>
