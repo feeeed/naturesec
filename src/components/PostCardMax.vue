@@ -1,7 +1,7 @@
 <template>
-  <v-container>
     <v-card
-        class="mx-auto overflow-hidden"
+        class="overflow-hidden my-5"
+        max-width="800px"
         flat
     >
       <v-card-item>
@@ -33,7 +33,6 @@
         </v-btn>
       </v-card-actions>
     </v-card>
-  </v-container>
 </template>
 
 <script>

@@ -50,12 +50,14 @@
 <!--            </v-slide-group-item>-->
 <!--          </v-slide-group>-->
 <!--          </v-row> -->
-        <v-row>
+        <v-row justify="center">
           <v-col
               cols="12"
               sm="2"
               class="pt-7"
+              
           >
+          <div class="stickyMenu">
           <my-input
               :model-value="searchQuery"
               @update:model-value="setSearchQuery"
@@ -84,7 +86,7 @@
               </div>
               <v-divider class="border-opacity-50"></v-divider>
               <div class="px-4 pt-4 text-center text-h6">
-                  Сортировка
+                  Группировка
                 </div>
               <div class="pa-4">
                 <my-select
@@ -117,11 +119,11 @@
                 </ul>
               </v-card-text>
             </v-card>
-
+          </div>
           </v-col>
           <v-col
               cols="12"
-              sm="10"
+              sm="6"
           >
             <post-list
               :posts="selectedPostsAndSearch"
@@ -205,5 +207,12 @@ export default {
   }
 }
 </script>
-<style>
+<style scoped>
+.stickyMenu{
+  position: sticky;
+  top:97px;
+  
+
+}
+
 </style>

@@ -7,11 +7,13 @@ import ymapPlugin from 'vue-yandex-maps'
 import { createVuetify } from 'vuetify'
 import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
+import '@mdi/font/css/materialdesignicons.css'
 
 
 const vuetify = createVuetify({
     components,
     directives,
+    
 })
 
 const settings = {
@@ -22,5 +24,5 @@ const settings = {
     version: '2.1'
 }
 
-createApp(App).use(store).use(vuetify).use(router).use(ymapPlugin,settings).mount('#app')
+createApp(App).use(store).use(vuetify,{iconfont:'mdi',}).use(router).use(ymapPlugin,settings).mount('#app')
 

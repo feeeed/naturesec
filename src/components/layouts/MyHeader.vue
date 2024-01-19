@@ -4,26 +4,26 @@
       <v-list density="compact" nav>
         <v-list-item
             @click="$router.push(`/`)"
-            prepend-icon="mdi-view-dashboard"
+            prepend-icon="mdi-home"
             title="Главная"
             value="home"
 
         ></v-list-item>
         <v-list-item
             @click="$router.push(`/main`)"
-            prepend-icon="mdi-view-dashboard"
+            prepend-icon="mdi-information"
             title="Информация"
             value="home"
         ></v-list-item>
         <v-list-item
             @click="$router.push(`/about`)"
-            prepend-icon="mdi-forum"
+            prepend-icon="mdi-home-map-marker"
             title="Контакты"
             value="about"
         ></v-list-item>
         <v-list-item
             @click="$router.push(`/contacts`)"
-            prepend-icon="mdi-forum"
+            prepend-icon="mdi-contacts"
             title="О нас"
             value="contacts"
         ></v-list-item>
