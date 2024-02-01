@@ -26,7 +26,7 @@
         <v-btn
             color="green-lighten-2"
             variant="text"
-            @click="$router.push(`/posts/${_id}`)"
+            @click="$router.push(`/posts/${id}`)"
 
         >
           Подробнее
@@ -40,7 +40,7 @@ export default {
 
   name: 'PostCard',
   props:{
-    _id:{
+    id:{
       type: String,
     },
     title: {

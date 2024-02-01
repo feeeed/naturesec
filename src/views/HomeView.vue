@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <v-main class="bg-grey-lighten-3">
-
       <v-dialog v-model="dialog2" width="auto">
         <v-card>
           <v-card-text>
