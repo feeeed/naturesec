@@ -123,6 +123,7 @@ const state = () => ({
         {value: 'НМУ',name:'НМУ'},
         {value: 'ДВОС',name:'ДВОС'},
         {value: 'ЗГУ',name:'ЗГУ'},
+        
     ]
 
 
