@@ -6,7 +6,7 @@
 
           :key="key"
 
-          :_id="post._id"
+          :id="post.id"
 
           :title="post.title"
 

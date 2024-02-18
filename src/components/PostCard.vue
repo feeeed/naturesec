@@ -16,7 +16,7 @@
         ></v-img>
 
       </v-card-item>
-      <v-card-text class="text-h6">
+      <v-card-text class="text-subtitle-1">
         <span v-html="mainContent"></span>
 
       </v-card-text>
@@ -39,7 +39,7 @@ export default {
 
   name: 'PostCard',
   props:{
-    _id:{
+    id:{
       type: String,
     },
     title: {

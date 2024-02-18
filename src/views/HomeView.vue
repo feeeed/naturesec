@@ -1,8 +1,6 @@
 <template>
   <div class="home">
     <v-main class="bg-grey-lighten-3">
-      <my-top-menu/>
-
       <v-dialog v-model="dialog2" width="auto">
         <v-card>
           <v-card-text>
@@ -153,7 +151,6 @@ import PostList from "@/components/layouts/PostList.vue";
 import{mapGetters,mapActions,mapState,mapMutations} from "vuex";
 import MyInput from "@/components/layouts/MyInput.vue";
 import MySelect from "@/components/layouts/MySelect.vue";
-import MyTopMenu from "@/components/layouts/MyTopMenu.vue";
 
 export default {
   data(){
@@ -167,7 +164,7 @@ export default {
                 ]
     }
   },
-  components: {MySelect, MyInput,PostList,MyTopMenu},
+  components: {MySelect, MyInput,PostList},
   mounted() {
     this.fetchPosts();
     this.dialog2 = true;

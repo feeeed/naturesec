@@ -32,7 +32,7 @@
     >
       <v-btn
           variant="flat"
-          @click="$router.push(`/posts/${_id}`)"
+          @click="$router.push(`/posts/${id}`)"
 
       >Подробнее</v-btn>
 
@@ -46,7 +46,7 @@
 export default {
   name: 'PostCardTitle',
   props:{
-    _id:{
+    id:{
       type: String,
     },
     title:{
