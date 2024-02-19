@@ -8,10 +8,10 @@
                 class="d-flex flex-column justify-center">
                     <div class="title">
                         <v-sheet class="mt-16">
-                            <p class="text-h4 font-weight-bold d-flex d-md-none" color="#3ADA2A">
+                            <p class="text-h4 font-weight-bold d-flex d-md-none text-light-green-accent-4">
                                 Природоохранный центр
                             </p>
-                            <p class="text-h4 text-xl-h1 text-lg-h2 font-weight-bold d-none d-md-flex" color="#3ADA2A">
+                            <p class="text-h4 text-xl-h1 text-light-green-accent-4 text-lg-h2 font-weight-bold d-none d-md-flex">
                                 Природоохранный центр
                             </p>
                         </v-sheet>                        
@@ -32,8 +32,8 @@
                     <div class="buttons-social d-flex align-center">
                         <v-btn 
                         density="compact" 
-                        variant="outlined" 
-                        icon="mdi-plus" 
+                        variant="outlined"
+                        icon="mdi-plus"
                         size="x-large"
                         ></v-btn>
                         <v-btn 
@@ -80,12 +80,25 @@
                 <div class="d-flex d-md-none flex-grow-0">
                     <v-img 
                     :src="require('../assets/image.webp')" 
-                    style="width: 350px; height: px;"
+                    style="width: 350px;"
                     ></v-img>    
                 </div>
                 </v-col>
             </v-row>
-            <v-container>
+            <v-container class="my-10">
+              <v-row class="d-flex flex-column justify-center text-center align-center">
+                <v-sheet class="d-flex flex-column align-center">
+                  <p class="text-h4 text-xl-h3 font-weight-bold mb-5">
+                    Услуги природоохранного назначения
+                  </p>
+                  <p class="text-body-1 font-weight-medium text-medium-emphasis w-50 mb-5">
+                    Услуги пользующееся наибольшим спросом среди наших заказчиков.
+                  </p>
+
+                </v-sheet>
+
+              </v-row>
+
                 <v-row>
                 <TitlePostListV2
                 :posts="sortedPosts"
@@ -126,9 +139,6 @@ import TitlePostListV2 from '@/components/layouts/TitlePostListV2.vue';
     color: #3ADA2A;
     
     
-}
-.text-h4{
-    color: #3ADA2A;
 }
 
 </style>

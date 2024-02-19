@@ -1,69 +1,89 @@
 <template>
-  <v-main class="bg-grey-lighten-3">
-    <v-parallax
-        :src="require('../assets/backAbout.jpg')"
-        style="height: 400px"
-    >
-      <div class="d-flex flex-column fill-height justify-center align-center text-white">
-        <h1 class="title-text text-h1 font-weight-thin mb-4">
-          Нам 20 лет!
-        </h1>
-        <h4 class="subheading">
-          На протежении двадцати лет нам доверяют множество заказчиков и вот почему -
-        </h4>
-
-      </div>
-    </v-parallax>
+  <v-main class="">
     <v-container>
-      <v-sheet
-          min-height="250"
-          rounded
-          class="d-flex my-8 justify-center align-center text-center"
+      <v-row
+      class="d-flex justify-center"
       >
-        <div>
-        <h3 class="text-h4 font-weight-black text-green-lighten-3">
-          «Природоохранный центр» - это:
-        </h3>
-          <ul class="py-4 px-2">
-            <li>
-              – многолетний успешный опыт разработки всех видов экологической документации (ПДВ, ПНООЛР, СЗЗ, отчеты об образовании отходов, паспорта опасных отходов);
-            </li>
-            <li>
-              – профессиональная команда дипломированных экологов, постоянно повышающих квалификацию;
-            </li>
-            <li>
-              – использование современного программного обеспечения;
-            </li>
-            <li>
-              – индивидуальный подход к каждому заказчику.
-            </li>
-          </ul>
-        </div>
+        <v-col>
+          <v-sheet class="d-flex flex-column align-center mb-10">
+            <p class="text-h4 text-xl-h3 font-weight-bold mb-3">
+              Нам 20 лет!
+            </p>
+            <p class="text-body-1 font-weight-medium text-medium-emphasis">
+              На протежении двадцати лет нам доверяют множество заказчиков и вот почему -
+            </p>
+          </v-sheet>
+          <v-card
+              class="text-center d-flex flex-row align-center justify-center"
+              variant="outlined"
+              rounded="xl"
+              min-height="400"
+          >
+          </v-card>
+        </v-col>
+      </v-row>
+      <v-row>
+        <v-col
+        cols="12"
+        sm="6"
+        class="d-flex align-center"
+        >
+          <v-sheet>
+            <p class="text-h4 mb-6">
+              Природоохранный центр - это:
+            </p>
+            <ul class="font-weight-light">
+              <li>1. Многолетний успешный опыт разработки всех видов экологической
+                документации (ПДВ, ПНООЛР, СЗЗ, отчеты об образовании отходов,
+                паспорта опасных отходов);</li>
+              <li>2. Профессиональная команда дипломированных экологов,
+                постоянно повышающих квалификацию;</li>
+              <li>3. Использование современного программного обеспечения;</li>
+              <li>4. Индивидуальный подход к каждому заказчику.</li>
+            </ul>
 
-      </v-sheet>
+          </v-sheet>
+        </v-col>
+        <v-col
+        cols="12"
+        sm="6"
+        >
+          <v-card
+              class="text-center d-flex flex-row align-center justify-center"
+              variant="outlined"
+              rounded="xl"
+              min-height="500"
+          >
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+    <v-container>
+
 
     </v-container>
+
     <v-container>
       <h2 class="text-center py-4">
         Нам доверяют
       </h2>
       <v-row class="text-center justify-space-around py-4 ">
 
-<companies-card
+<review-card
 v-for="(card,key) in cards"
 :key="key"
 :title="card.title"
 :img="card.img"
 :subtitle="card.subtitle"
 >
-</companies-card>
+</review-card>
       </v-row>
     </v-container>
   </v-main>
 </template>
 
 <script>
-import CompaniesCard from "@/components/CompaniesCard.vue";
+import ReviewCard from "@/components/layouts/ ReviewCard.vue";
 
 export default {
   data:()=>({
@@ -91,7 +111,7 @@ export default {
     ],
   }),
   components:{
-    CompaniesCard
+    ReviewCard
   }
 }
 </script>
@@ -114,6 +134,7 @@ ul{
 
 li{
   list-style-type: none;
+  margin-bottom: 25px;
 }
 
 </style>

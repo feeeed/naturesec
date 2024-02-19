@@ -2,15 +2,19 @@
         <PostCardTitleV2
         v-for="(post,key) in posts"
         :key="key"
-        :_id="post._id"
+        :id="post.id"
         :title="post.title"
         />
-        <v-col>
+        <v-col
+        cols="12"
+        sm="6"
+        >
             <v-card
             class="mx-auto d-flex align-center justify-center"
-            min-width="600"
+            min-height="200"
             variant="outlined"
             height="150"
+            rounded="xl"
             >
                 <v-card-subtitle>
                     <p class="text-h5">

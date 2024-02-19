@@ -2,6 +2,8 @@
   <div>
       <v-card
           class="mx-auto my-4"
+          rounded="xl"
+          variant="outlined"
       >
         <div class="d-flex flex-column flex-nowrap justify-space-between">
           <v-img
@@ -36,6 +38,7 @@
                   v-if="reveal"
                   class="v-card--reveal justify-space-between"
                   style="height: 100%"
+                  rounded="xl"
 
               >
                   <v-card-text class="pb-0 my-4">
