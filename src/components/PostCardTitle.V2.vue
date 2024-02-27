@@ -50,7 +50,7 @@
     name:"PostCardTitleV2",
     props:{
         id:{
-            type: String,
+            type: Number,
         },
         title:{
             type: String,

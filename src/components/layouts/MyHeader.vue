@@ -16,13 +16,13 @@
             value="home"
         ></v-list-item>
         <v-list-item
-            @click="$router.push(`/about`)"
+            @click="$router.push(`/contacts`)"
             prepend-icon="mdi-home-map-marker"
             title="Контакты"
             value="about"
         ></v-list-item>
         <v-list-item
-            @click="$router.push(`/contacts`)"
+            @click="$router.push(`/about`)"
             prepend-icon="mdi-contacts"
             title="О нас"
             value="contacts"
@@ -31,23 +31,26 @@
     </v-navigation-drawer>
     <v-app-bar
         flat color="#ffffff"
+        height="80"
     >
       <v-container class="fill-height d-flex align-center text-center justify-center">
         <v-btn
-            @click.stop="drawer = !drawer"
+        icon="mdi-menu"
+        @click.stop="drawer = !drawer"
         >
-          <img src="../../assets/WDOMcutdq1U.png" height="45" width="100"/>
         </v-btn>
 
-
-        <v-btn
-            variant="text"
-            @click="$router.push(`/`)"
-        > Природоохранный центр</v-btn>
         <v-spacer></v-spacer>
+        <div class="d-none d-sm-flex">
+        <v-btn
+        variant="text"
+        @click="$router.push(`/`)"
+        >
+        Главная
+        </v-btn>
         <v-btn
             variant="text"
-            @click="$router.push(`/contacts`)"
+            @click="$router.push(`/about`)"
         >
           О нас
         </v-btn>
@@ -57,14 +60,13 @@
         >
           Информация
         </v-btn>
-
         <v-btn
             variant="text"
-            @click="$router.push(`/about`)"
+            @click="$router.push(`/contacts`)"
         >
           Контакты
         </v-btn>
-
+      </div>
 
       </v-container>
     </v-app-bar>

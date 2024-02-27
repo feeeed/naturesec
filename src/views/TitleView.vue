@@ -1,132 +1,144 @@
 <template>
-  <div class="welcome">
-    <v-main class="bg-grey-lighten-3">
-      <v-container class="v-container--fluid">
-      <v-row class="align-content-center justify-center align-center flex-wrap-reverse bg-green-lighten-3 py-4">
-        <v-col class="ma-10 ">
-          <v-sheet color="green-lighten-3" class="text-h3 py-4 ">
-            Лидер региона в области предоставления услуг экологического назначения.
-          </v-sheet>
-          <v-sheet color="green-lighten-3" class="font-weight-regular text-medium-emphasis">
-            Вот уже на протяжение двух десятилетий, взаимодействуя с ведущими проектными
-            и научными организациями нашего региона, «Природоохранный центр» помогает успешно решать задачи любого
-            уровня сложности предприятиям нашей области. Мы постоянно развиваемся, расширяем объёмы задач,
-            растёт круг заказчиков. И сегодня мы готовы к долгосрочному взаимовыгодному сотрудничеству
-            со всеми заинтересованными юридическими лицами и индивидуальными предпринимателями.
-          </v-sheet>
+    <div class="welcome">
+        <v-main>
+            <v-row class="flex-wrap-reverse" justify="center">
+                <v-col
+                cols="10"
+                sm="6"
+                class="d-flex flex-column justify-center">
+                    <div class="title">
+                        <v-sheet class="mt-16">
+                            <p class="text-h4 font-weight-bold d-flex d-md-none text-light-green-accent-4">
+                                Природоохранный центр
+                            </p>
+                            <p class="text-h4 text-xl-h1 text-light-green-accent-4 text-lg-h2 font-weight-bold d-none d-md-flex">
+                                Природоохранный центр
+                            </p>
+                        </v-sheet>                        
+                    </div>
+                    <div class="subtitle mr-16 my-8">
+                        <v-sheet>
+                            <p class="text-body-1 font-weight-medium text-medium-emphasis">
+                                Вот уже на протяжение двух десятилетий, 
+                        взаимодействуя с ведущими проектными и научными 
+                        организациями нашего региона, 
+                        «Природоохранный центр» помогает успешно 
+                        решать задачи любого уровня сложности предприятиям 
+                        нашей области. 
+                            </p>
+                            
+                        </v-sheet>
+                    </div>
+                    <div class="buttons-social d-flex align-center">
+                        <v-btn 
+                        density="compact" 
+                        variant="outlined"
+                        icon="mdi-plus"
+                        size="x-large"
+                        ></v-btn>
+                        <v-btn 
+                        density="compact" 
+                        variant="outlined" 
+                        icon="mdi-plus" 
+                        size="x-large" 
+                        class="mx-10"
+                        ></v-btn>
+                        <v-btn 
+                        density="compact" 
+                        variant="outlined" 
+                        rounded="" 
+                        size="x-large" 
+                        min-width="120"
+                        class="text-none font-weight-bold"
+                        >Больше о нас</v-btn>
+                    </div>
 
-        </v-col>
-        <v-col class="d-flex justify-center flex-grow-1 flex-shrink-0">
+                    <div class="button-continue mt-16">
+                        <v-btn
+                        density="compact"
+                        variant="flat"
+                        rounded=""
+                        color="#3ADA2A"
+                        min-width="127"
+                        size="x-large"
+                        class="text-none font-weight-bold text-white"
+                        >
+                            Услуги
+                        </v-btn>
+                    </div>
+                </v-col>
+                <v-col 
+                cols="10"
+                sm="4"
+                class="d-flex justify-center flex-grow-1 flex-shrink-0 ">
+                <div class="d-none d-md-flex my-16">
+                    <v-img
+                    :src="require('../assets/image.webp')" 
+                    style="width: 600px; height: 600px;"
+                    ></v-img>
+                </div>
+                <div class="d-flex d-md-none flex-grow-0">
+                    <v-img 
+                    :src="require('../assets/image.webp')" 
+                    style="width: 350px;"
+                    ></v-img>    
+                </div>
+                </v-col>
+            </v-row>
+            <v-container class="my-10">
+              <v-row class="d-flex flex-column justify-center text-center align-center">
+                <v-sheet class="d-flex flex-column align-center">
+                  <p class="text-h4 text-xl-h3 font-weight-bold mb-5">
+                    Услуги природоохранного назначения
+                  </p>
+                  <p class="text-body-1 font-weight-medium text-medium-emphasis w-50 mb-5">
+                    Услуги пользующееся наибольшим спросом среди наших заказчиков.
+                  </p>
 
-          <img src="./../assets/imgrig.png" style="max-width: 100%">
-        </v-col>
-      </v-row>
+                </v-sheet>
 
+              </v-row>
 
-      </v-container>
-      <v-container class="my-12">
-        <v-row class="align-center text-center justify-center">
-          <div class="text-block-welcome">
-            <h2 class="text-h4 font-weight-black py-4 text-black">Услуги природоохранного назначения</h2>
-          </div>
-        </v-row>
-        <v-row>
-            <title-post-list
-              :posts="sortedPosts"
-              />
-        </v-row>
-
-      </v-container>
-
-      <v-sheet
-          height="200px"
-          color="gray"
-          class="d-flex text-center align-center justify-space-around rounded mx-11 mb-3"
-      >
-        <h2>Больше о наших услугах на отдельной стрнице</h2>
-        <v-btn
-            variant="flat"
-            color="green-lighten-2"
-            @click="$router.push(`/main`)"
-
-        >
-          перейти
-
-        </v-btn>
-      </v-sheet>
-
-      <v-divider></v-divider>
-<!--      <v-container>-->
-<!--        <v-row class="my-12 text-center justify-center">-->
-<!--          <h2 class="text-h4 font-weight-black py-4 text-black">Отвечаем на вопросы</h2>-->
-<!--          <v-expansion-panels variant="inset">-->
-<!--            <v-expansion-panel-->
-
-
-<!--                title="Почему выбирают нас"-->
-
-<!--                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"-->
-<!--            >-->
-<!--            </v-expansion-panel>-->
-<!--            <v-expansion-panel-->
-
-<!--                title="Title2"-->
-<!--                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"-->
-<!--            >-->
-<!--            </v-expansion-panel>-->
-<!--            <v-expansion-panel-->
-
-<!--                title="Title3"-->
-<!--                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"-->
-<!--            >-->
-<!--            </v-expansion-panel>-->
-<!--            <v-expansion-panel-->
-
-<!--                title="Title4"-->
-<!--                text="Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi, ratione debitis quis est labore voluptatibus! Eaque cupiditate minima"-->
-<!--            >-->
-<!--            </v-expansion-panel>-->
-<!--          </v-expansion-panels>-->
-<!--        </v-row>-->
-
-<!--      </v-container>-->
-    </v-main>
-  </div>
-
+                <v-row>
+                <TitlePostListV2
+                :posts="sortedPosts"
+                />
+            </v-row>
+            </v-container>
+            
+        </v-main>
+    
+    
+    </div>
 </template>
 
 <script>
- import{mapGetters,mapActions} from "vuex";
- import TitlePostList from "@/components/layouts/TitlePostList.vue";
-export default {
-   components:{TitlePostList},
-   mounted() {
-     this.fetchPosts();
-   },
-  computed:{
-     ...mapGetters({
-       sortedPosts:'sortedPosts',
-     }),
-
-  },
-  methods:{
-     ...mapActions({
-       fetchPosts:'fetchPosts',
-     })
-  }
-}
+import { mapGetters, mapActions } from 'vuex';
+import TitlePostListV2 from '@/components/layouts/TitlePostListV2.vue';
+    export default {
+        components:{TitlePostListV2},
+        mounted(){
+            this.fetchPosts();
+        },
+        computed:{
+            ...mapGetters({
+                sortedPosts:'sortedPosts'
+            }),
+        },
+        methods:{
+            ...mapActions({
+                fetchPosts:'fetchPosts',
+            })
+        }
+        
+    }
 </script>
 
-<style>
-.text-block-welcome{
-  align-items: center;
-  text-align: center;
-}
-.image-welcome>img{
-  max-width: 100%;
-}
-.img-welcome-block{
-  max-width: 100%;
+<style scoped>
+.text-h1{
+    color: #3ADA2A;
+    
+    
 }
 
 </style>

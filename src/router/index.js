@@ -9,7 +9,7 @@ const routes = [
     component: TitleView
   },
   {
-    path: '/about',
+    path: '/contacts',
     name: 'Контакты',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
@@ -28,17 +28,10 @@ const routes = [
 
   },
   {
-    path: '/contacts',
+    path: '/about',
     name: 'О нас',
     component: () => import('@/views/ContactsView.vue')
   },
-  {
-    path:'/test',
-    name:'Test',
-    component: () => import('@/views/TestPg.vue')
-
-
-  }
 ]
 
 const router = createRouter({

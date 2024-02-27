@@ -41,7 +41,7 @@ export default {
   name: 'PostCard',
   props:{
     id:{
-      type: String,
+      type: Number,
     },
     title: {
       type: String,
