@@ -37,6 +37,11 @@ const routes = [
     name:'Категории',
     component:()=> import('@/views/CategoriesView.vue')
   },
+  {
+    path: '/service',
+    name:'Услуги',
+    component: ()=> import('@/views/ServiceView.vue')
+  }
 ]
 
 const router = createRouter({
