@@ -1,7 +1,7 @@
 import {getServiceEk} from "@/services/servicesEk.service";
 
 const mutations = {
-    setServiceEK(state,serviceEk){
+    setServiceEk(state,serviceEk){
         state.serviceEk = serviceEk
     },
     setError(state,error){

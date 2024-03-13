@@ -54,12 +54,27 @@
         >
           О нас
         </v-btn>
-        <v-btn
-            variant="text"
-            @click="$router.push(`/main`)"
-        >
-          Информация
-        </v-btn>
+          <v-menu
+          open-on-hover
+          >
+            <template
+            v-slot:activator="{props}"
+            >
+              <v-btn
+                  variant="text"
+                  v-bind="props"
+              >
+                Информация
+              </v-btn>
+            </template>
+            <v-list>
+              <v-list-item v-for="(item, index) in items" :key="index">
+                <router-link :to= item.link>{{item.title}}</router-link>
+              </v-list-item>
+            </v-list>
+
+          </v-menu>
+
         <v-btn
             variant="text"
             @click="$router.push(`/contacts`)"
@@ -77,11 +92,23 @@
     data(){
       return{
         drawer:null,
+        items: [
+          { title: 'Услуги', link:'/categories' },
+          { title: 'Посты', link: '/main' },
+        ],
       }
     },
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+
+a{
+  color: black;
+  text-decoration: none;
+}
+a:hover{
+  color: #3ADA2A;
+}
 
 </style>

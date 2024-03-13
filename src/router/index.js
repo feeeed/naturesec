@@ -38,7 +38,7 @@ const routes = [
     component:()=> import('@/views/CategoriesView.vue')
   },
   {
-    path: '/service',
+    path: '/service/:id',
     name:'Услуги',
     component: ()=> import('@/views/ServiceView.vue')
   }

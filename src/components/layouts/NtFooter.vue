@@ -37,32 +37,52 @@
             <div class="specialLinks d-flex justify-space-around mt-11">
                 <div>
                     <p class="font-weight-bold mb-5">
+                      <router-link to="/">
                         Главная
+                      </router-link>
+
                     </p>
                 </div>
                 <div>
                     <p class="font-weight-bold mb-5">
+                      <router-link to="/about">
                         О нас
+                      </router-link>
+
                     </p>
                     <ul class="text-medium-emphasis">
                         <li>
+                          <router-link to="/about">
                             Отзывы
+                          </router-link>
                         </li>
                     </ul>
                 </div>
                 <div>
                     <p class="font-weight-bold mb-5">
+                      <router-link to="/main">
                         Ресурсы
+                      </router-link>
                     </p>
                     <ul class="text-medium-emphasis">
-                        <li>Услуги</li>
+                        <li>
+                          <router-link to="/categories">
+                            Услуги
+                          </router-link>
+                        </li>
                         <br>
-                        <li>Информация</li>
+                        <li>
+                          <router-link to="/main">
+                            Информация
+                          </router-link>
+                        </li>
                     </ul>
                 </div>
                 <div>
                     <p class="font-weight-bold mb-5">
+                      <router-link to="/contacts">
                         Контакты
+                      </router-link>
                     </p>
                     <ul class="text-medium-emphasis">
                         <li><a href="mailto:naturesecur@mail.ru" style="color: white">naturesecur@mail.ru</a></li>
@@ -123,7 +143,14 @@
 </template>
 
 <script>
+    import router from "@/router";
+
     export default {
+      methods: {
+        router() {
+          return router
+        }
+      }
         
     }
 </script>
@@ -135,7 +162,9 @@ ul{
 li{
     list-style-type: none;
     color: white;
-
+}
+a{
+  color: white;
 }
 
 

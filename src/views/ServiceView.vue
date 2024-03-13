@@ -8,36 +8,45 @@
       <v-col
           cols="12"
           sm="5"
-          class="d-flex flex-column"
+          class="d-flex flex-column justify-space-around"
       >
         <v-sheet>
-          <p class="text-h4 mb-6">
-            Разработка паспортов отходов
+          <p class="text-h3 mb-6">
+            {{serviceEk.title}}
           </p>
-          <p class="font-weight-light w-75">
-            Гарантированное согласование паспортов отходов I-IV классов опасности по всей России
+          <p class="font-weight-light text-h5 w-75">
+            {{serviceEk.description}}
           </p>
         </v-sheet>
         <v-btn
             density="compact"
-            variant="outlined"
+            variant="flat"
             rounded=""
+            color="#3ADA2A"
             size="x-large"
-            min-width="120"
-            class="text-none font-weight-bold mt-6 w-50"
-        >Узнать точную стоимость</v-btn>
-
+            height="60"
+            class="text-none font-weight-bold text-white w-50"
+        >
+          Узнать точную стоимость
+        </v-btn>
       </v-col>
       <v-col
           cols="12"
           sm="5"
       >
+
         <v-card
-            class="text-center d-flex flex-row align-center justify-center"
+            class=""
             variant="outlined"
             rounded="xl"
-            min-height="300"
+            max-height="300"
         >
+            <v-img
+                aspect-ratio="16/9"
+                :src="serviceEk.image"
+                cover
+
+            ></v-img>
         </v-card>
       </v-col>
     </v-row>
@@ -49,11 +58,17 @@
       sm="7"
       >
         <v-card
-            class="text-center d-flex flex-row align-center justify-center"
+            class="text-center d-flex flex-row text-start"
             variant="outlined"
             rounded="xl"
             min-height="300"
         >
+          <v-sheet>
+            <p class="text-h5 ml-6 my-4">
+              Как мы разрабатываем проект:
+            </p>
+            <span v-html="serviceEk.mainText"></span>
+          </v-sheet>
         </v-card>
       </v-col>
       <v-col
@@ -61,14 +76,68 @@
       sm="3"
       >
         <v-card
-            class="text-center d-flex flex-row align-center justify-center"
+            class="text-center d-flex flex-row justify-center"
             variant="outlined"
             rounded="xl"
             min-height="300"
         >
+          <v-sheet>
+            <p class="mt-4 text-h5">
+              Сроки:
+            </p>
+            <p class="mt-5">
+              {{serviceEk.specialWords}}
+            </p>
+          </v-sheet>
         </v-card>
       </v-col>
     </v-row>
+    <v-row
+    class="justify-center my-16"
+    >
+      <v-col
+      cols="12"
+      sm="10">
+      <v-timeline direction="horizontal">
+        <v-timeline-item>
+          <template v-slot:opposite>
+            Opposite content
+          </template>
+          <div>
+            <div class="text-h6">Content title</div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </v-timeline-item>
+
+        <v-timeline-item>
+          <template v-slot:opposite>
+            Opposite content
+          </template>
+          <div>
+            <div class="text-h6">Content title</div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </v-timeline-item>
+
+        <v-timeline-item>
+          <template v-slot:opposite>
+            Opposite content
+          </template>
+          <div>
+            <div class="text-h6">Content title</div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        </v-timeline-item>
+      </v-timeline>
+      </v-col>
+    </v-row>
+
     </v-container>
   </div>
   </v-main>

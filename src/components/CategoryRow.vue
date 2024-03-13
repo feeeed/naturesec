@@ -46,6 +46,7 @@
                         size="x-large" 
                         min-width="120"
                         class="text-none font-weight-bold"
+                        @click="$router.push(`/service/${services.id}`)"
                         >Подробнее</v-btn>
 
 
