@@ -35,7 +35,7 @@
           >
             <v-btn
                 variant="flat"
-                @click="$router.push(`/posts/${id}`)"
+                @click="$router.push(`/service/${id}`)"
 
             >Подробнее</v-btn>
 

@@ -26,6 +26,8 @@
             size="x-large"
             height="60"
             class="text-none font-weight-bold text-white w-50"
+            @click="customJivoOpen()"
+
         >
           Узнать точную стоимость
         </v-btn>
@@ -67,7 +69,7 @@
             <p class="text-h5 ml-6 my-4">
               Как мы разрабатываем проект:
             </p>
-            <span v-html="serviceEk.mainText"></span>
+            <span class="ml-6" v-html="serviceEk.mainText"></span>
           </v-sheet>
         </v-card>
       </v-col>
@@ -99,38 +101,57 @@
       cols="12"
       sm="10">
       <v-timeline direction="horizontal">
-        <v-timeline-item>
+        <v-timeline-item
+        dot-color="green">
           <template v-slot:opposite>
-            Opposite content
+            1
           </template>
           <div>
-            <div class="text-h6">Content title</div>
+            <div class="text-h6">Заявка</div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Позвоните нам по телефону
+            </p>
+            <p><span class="text-green">+7 (3812) 510-464</span> или оставьте заявку на сайте.</p>
+          </div>
+        </v-timeline-item>
+
+        <v-timeline-item
+            dot-color="green"
+        >
+          <template v-slot:opposite>
+            2
+          </template>
+          <div>
+            <div class="text-h6">Договор и оплата</div>
+            <p>
+              Мы подбираем оптимальное решение по срокам и стоимости.
             </p>
           </div>
         </v-timeline-item>
 
-        <v-timeline-item>
+        <v-timeline-item
+            dot-color="green"
+        >
           <template v-slot:opposite>
-            Opposite content
+            3
           </template>
           <div>
-            <div class="text-h6">Content title</div>
+            <div class="text-h6">Работа экологов</div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Разрабатываем и согласуем документацию.
             </p>
           </div>
         </v-timeline-item>
-
-        <v-timeline-item>
+        <v-timeline-item
+            dot-color="green"
+        >
           <template v-slot:opposite>
-            Opposite content
+            4
           </template>
           <div>
-            <div class="text-h6">Content title</div>
+            <div class="text-h6">Результат</div>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Вы получаете готовый результат
             </p>
           </div>
         </v-timeline-item>
@@ -161,8 +182,24 @@ export default {
   methods:{
     ...mapActions({
       fetchServiceEk:'fetchServiceEk'
-
     }),
+    customJivoOpen(){
+  let params = {start: 'chat'};
+  // eslint-disable-next-line
+  let apiResult = jivo_api.open(params);
+  // eslint-disable-next-line
+  if (apiResult.result === 'fail') {
+    // eslint-disable-next-line
+    console.log('Widget failed to open');
+    // eslint-disable-next-line
+  } else {
+    // eslint-disable-next-line
+    console.log('Widget open successfully');
+  }
+}
+
+
+
 
   },
 }

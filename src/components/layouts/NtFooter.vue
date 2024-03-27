@@ -157,7 +157,7 @@
 
 <style scoped>
 ul{
-    padding-left: 0%;
+    padding-left: 0;
 }
 li{
     list-style-type: none;

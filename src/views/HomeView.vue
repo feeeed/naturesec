@@ -156,12 +156,6 @@ export default {
   data(){
     return{
       dialog2: undefined,
-      content:[
-                    {value:'asd',name:'asd1'},
-                    {value:'asd',name:'asd2'},
-                    {value:'asd',name:'asd3'},
-                    {value:'asd',name:'asd4'},               
-                ]
     }
   },
   components: {MySelect, MyInput,PostList},

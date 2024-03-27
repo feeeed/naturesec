@@ -5,14 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>Природоохранный центр</title>
 
+    <title>Природоохранный центр</title>
+      <script src="//code.jivo.ru/widget/qjhJnp4Hxq" async></script>
   </head>
   <body>
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
+    <script>
+       function customJivoOpen(){
+        let params = {start: 'call'};
+        let apiResult = jivo_api.open(params);
+        if (apiResult.result === 'fail') {
+            console.log('Widget failed to open');
+        } else {
+            console.log('Widget open successfully');
+        }
+    }</script>
     <!-- built files will be auto injected -->
   </body>
 </html>

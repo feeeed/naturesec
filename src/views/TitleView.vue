@@ -50,6 +50,7 @@
                         size="x-large" 
                         min-width="120"
                         class="text-none font-weight-bold"
+                        @click="$router.push(`/about`)"
                         >Больше о нас</v-btn>
                     </div>
 
@@ -62,6 +63,7 @@
                         min-width="127"
                         size="x-large"
                         class="text-none font-weight-bold text-white"
+                        @click="$router.push(`/categories`)"
                         >
                             Услуги
                         </v-btn>
@@ -101,7 +103,7 @@
 
                 <v-row>
                 <TitlePostListV2
-                :posts="sortedPosts"
+                :posts="servicesEk"
                 />
             </v-row>
             </v-container>
@@ -118,17 +120,17 @@ import TitlePostListV2 from '@/components/layouts/TitlePostListV2.vue';
     export default {
         components:{TitlePostListV2},
         mounted(){
-            this.fetchPosts();
+            this.fetchAllServicesEk();
         },
         computed:{
             ...mapGetters({
-                sortedPosts:'sortedPosts'
+                servicesEk:'servicesEk',
             }),
         },
         methods:{
             ...mapActions({
-                fetchPosts:'fetchPosts',
-            })
+                fetchAllServicesEk:'fetchAllServicesEk',
+            }),
         }
         
     }
