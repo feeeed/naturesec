@@ -47,6 +47,7 @@
                 aspect-ratio="16/9"
                 :src="serviceEk.image"
                 cover
+                height="300"
 
             ></v-img>
         </v-card>
@@ -65,9 +66,10 @@
             rounded="xl"
             min-height="300"
         >
-          <v-sheet>
+          <v-sheet
+          class="ml-6">
             <p class="text-h5 ml-6 my-4">
-              Как мы разрабатываем проект:
+              Подробнее:
             </p>
             <span class="ml-6" v-html="serviceEk.mainText"></span>
           </v-sheet>

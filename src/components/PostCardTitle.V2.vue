@@ -7,19 +7,19 @@
 
 
     >
-      <v-hover v-slot="{ isHovering, props }">
+      <v-hover v-slot="{ isHovering,props }">
         <v-card
-        class="mx-auto text-center d-flex flex-column align-center justify-center" v-bind="props"
+        class="mx-auto text-center d-flex flex-column align-center justify-center bg-white" v-bind="props"
         min-width="200"
         min-height="200"
-        variant="outlined"
+        variant=""
         rounded="xl"
 
         >
         <v-icon
         color="light-green-accent-4"
-        icon="mdi-tree-outline"
-        size="100"
+        :icon="icon"
+        size="85"
         >
         </v-icon>
         <v-card-subtitle
@@ -35,7 +35,7 @@
           >
             <v-btn
                 variant="flat"
-                @click="$router.push(`/service/${id}`)"
+                @click="$router.push(`/category/${id}`)"
 
             >Подробнее</v-btn>
 
@@ -55,6 +55,10 @@
         title:{
             type: String,
             default:''
+        },
+        icon:{
+          type: String,
+          default:'',
         }
 
     }

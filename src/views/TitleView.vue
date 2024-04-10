@@ -87,10 +87,128 @@
                 </div>
                 </v-col>
             </v-row>
-            <v-container class="my-10">
+            <v-container fluid class="my-10 px-16">
+
+            <v-row
+            justify="center"
+            >
+                <v-col
+                    cols="10"
+                    sm="5">
+                    <v-card
+                        class="text-center d-flex flex-column align-center justify-center bg-grey-lighten-4"
+                        variant=""
+                        rounded="xl"
+                        min-height="400"
+                    >
+                    <v-card-item>
+                        <div class="text-h6 font-weight-medium">
+                            Наш рейтинг среди клиентов
+                        </div>
+
+                        
+                    </v-card-item>
+                    <v-card-item>
+                        <v-rating
+                            v-model="rating"
+                            color="light-green-accent-4"
+                            density="comfortable"
+                            readonly="1"
+                            half-increments
+                        >
+                    </v-rating>
+                    <div class="px-3">{{ totalRating }} оценок</div>
+
+                    </v-card-item>
+                    
+                    </v-card>
+                </v-col>
+                <v-col
+                    cols="10"
+                    sm="5">
+                    <v-card
+                        class="text-center d-flex flex-row align-center justify-center bg-grey-lighten-4"
+                        variant=""
+                        rounded="xl"
+                        min-height="400"
+                    >
+                    <v-card-item>
+                        <div class="text-h4">
+                            Нам <span class="text-light-green-accent-4">20</span> лет
+                        </div>
+                        <div class="my-3 text-h6 font-weight-medium text-medium-emphasis">
+                            Значительный опыт в области создания экологических проектов.
+                        </div>
+                    </v-card-item>
+                    </v-card>
+                </v-col>
+            </v-row>
+            <v-row
+            justify="center"
+            >
+                <v-col
+                cols="10"
+                sm="8"
+                >
+                    <v-card
+                        class="text-center d-flex flex-row align-center justify-center bg-grey-lighten-4"
+                        variant=""
+                        rounded="xl"
+                        min-height="400"
+                    >
+                    <v-card-item>
+                        <div class="text-h4">
+                            Собственный информационный портал
+                        </div>
+                        <v-icon
+                        icon="mdi-card-bulleted-settings"
+                        size="85"
+                        class="my-5"
+                        >
+                        </v-icon>
+                        <div class="my-3 text-h6 font-weight-medium text-medium-emphasis">
+                            Новости, информация, документы.
+                        </div>
+                    </v-card-item>
+                    </v-card>
+                </v-col>
+                <v-col
+                    cols="10"
+                    sm="2">
+                    <v-card
+                        class="text-center d-flex flex-row align-center justify-center bg-black"
+                        variant=""
+                        rounded="xl"
+                        min-height="400"
+                    >
+                    <v-card-item>
+                    <div class="text-h5">
+                        Перейти
+                        </div>
+                    </v-card-item>
+                    <v-card-actions
+
+                    >
+                        <v-btn 
+                        density="compact" 
+                        variant="outlined"
+                        icon="mdi-arrow-right-bold"
+                        size="x-large"
+                        color="light-green-accent-4"
+                        ></v-btn>
+                    </v-card-actions>
+                    </v-card>
+                </v-col>
+            </v-row>
+
+
+
+
+            </v-container>
+            <v-container fluid class="my-10 px-16 bg-grey-lighten-4">
               <v-row class="d-flex flex-column justify-center text-center align-center">
-                <v-sheet class="d-flex flex-column align-center">
-                  <p class="text-h4 text-xl-h3 font-weight-bold mb-5">
+                <v-sheet class="d-flex flex-column align-center bg-grey-lighten-4">
+                  <p class="text-h4 text-xl-h3 font-weight-bold my-5 ">
                     Услуги природоохранного назначения
                   </p>
                   <p class="text-body-1 font-weight-medium text-medium-emphasis w-50 mb-5">
@@ -103,7 +221,7 @@
 
                 <v-row>
                 <TitlePostListV2
-                :posts="servicesEk"
+                :posts="categories"
                 />
             </v-row>
             </v-container>
@@ -118,20 +236,25 @@
 import { mapGetters, mapActions } from 'vuex';
 import TitlePostListV2 from '@/components/layouts/TitlePostListV2.vue';
     export default {
+        data:() => ({rating:4.5, totalRating:17,}),
         components:{TitlePostListV2},
         mounted(){
-            this.fetchAllServicesEk();
-        },
-        computed:{
-            ...mapGetters({
-                servicesEk:'servicesEk',
-            }),
-        },
-        methods:{
-            ...mapActions({
-                fetchAllServicesEk:'fetchAllServicesEk',
-            }),
-        }
+        this.fetchCategories();
+
+    },
+    computed:{
+        ...mapGetters({
+            categories:'categories'
+
+        })
+
+    },
+    methods:{
+        ...mapActions({
+            fetchCategories:'fetchCategories'
+        })
+
+    }
         
     }
 </script>

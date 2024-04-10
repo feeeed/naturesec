@@ -1,20 +1,34 @@
 <template>
-    <v-row>
         <v-col
         cols="12"
-        sm="3"
+        sm="4"
         >
         <v-sheet>
+            
             <p class="text-h5 font-weight-bold">
                 {{ title }}
+                <v-icon
+        color="light-green-accent-4"
+        :icon="icon"
+        size="35"
+        >
+        </v-icon>
             </p>
-            <p class="text-body-1 font-weight-medium">
-                {{ description }}
+            <p
+            class="my-3"
+            v-for="(services, key) in servicesEk"
+            :key='key'
+            :id="services.id"
+            >
+            <router-link :to="{ name: 'Услуги', params: {id: services.id}}">
+                        {{services.title}}
+            </router-link>
+
             </p>
         </v-sheet>
         
         </v-col>
-        <v-col
+        <!-- <v-col
         cols="12"
         sm="9"
         class="d-flex"
@@ -52,8 +66,7 @@
 
         </v-card-item>
         </v-card>
-        </v-col>
-    </v-row>
+        </v-col> -->
 </template>
 
 <script>
@@ -66,6 +79,10 @@ export default {
         },
         description:{
             type: String,
+            default:''
+        },
+        icon:{
+            type:String,
             default:''
         },
         servicesEk:{

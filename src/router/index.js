@@ -41,6 +41,11 @@ const routes = [
     path: '/service/:id',
     name:'Услуги',
     component: ()=> import('@/views/ServiceView.vue')
+  },
+  {
+    path:'/category/:id',
+    name:'Каткгория',
+    component: ()=> import('@/views/CategoryView.vue')
   }
 ]
 
