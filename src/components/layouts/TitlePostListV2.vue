@@ -15,8 +15,7 @@
             class="mx-auto d-flex align-center justify-center bg-white"
             v-bind="props"
             min-height="200"
-            variant=""
-            height="150"
+            variant="flat"
             rounded="xl"
             >
                 <v-card-subtitle>

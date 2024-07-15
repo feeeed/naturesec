@@ -4,15 +4,13 @@
         xl="3"
         lg="3"
         md="3"
-
-
     >
       <v-hover v-slot="{ isHovering,props }">
         <v-card
         class="mx-auto text-center d-flex flex-column align-center justify-center bg-white" v-bind="props"
         min-width="200"
         min-height="200"
-        variant=""
+        variant="flat"
         rounded="xl"
 
         >

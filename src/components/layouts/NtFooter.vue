@@ -143,15 +143,8 @@
 </template>
 
 <script>
-    import router from "@/router";
-
     export default {
-      methods: {
-        router() {
-          return router
-        }
-      }
-        
+
     }
 </script>
 

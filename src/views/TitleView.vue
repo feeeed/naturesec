@@ -53,21 +53,6 @@
                         @click="$router.push(`/about`)"
                         >Больше о нас</v-btn>
                     </div>
-
-                    <div class="button-continue mt-16">
-                        <v-btn
-                        density="compact"
-                        variant="flat"
-                        rounded=""
-                        color="#3ADA2A"
-                        min-width="127"
-                        size="x-large"
-                        class="text-none font-weight-bold text-white"
-                        @click="$router.push(`/categories`)"
-                        >
-                            Услуги
-                        </v-btn>
-                    </div>
                 </v-col>
                 <v-col 
                 cols="10"
@@ -87,7 +72,7 @@
                 </div>
                 </v-col>
             </v-row>
-            <v-container fluid class="my-10 px-16">
+            <v-container fluid class="my-10 px-16 d-none d-sm-inline-block">
 
             <v-row
             justify="center"
@@ -97,7 +82,7 @@
                     sm="5">
                     <v-card
                         class="text-center d-flex flex-column align-center justify-center bg-grey-lighten-4"
-                        variant=""
+                        variant="flat"
                         rounded="xl"
                         min-height="400"
                     >
@@ -128,7 +113,7 @@
                     sm="5">
                     <v-card
                         class="text-center d-flex flex-row align-center justify-center bg-grey-lighten-4"
-                        variant=""
+                        variant="flat"
                         rounded="xl"
                         min-height="400"
                     >
@@ -152,7 +137,7 @@
                 >
                     <v-card
                         class="text-center d-flex flex-row align-center justify-center bg-grey-lighten-4"
-                        variant=""
+                        variant="flat"
                         rounded="xl"
                         min-height="400"
                     >
@@ -177,7 +162,7 @@
                     sm="2">
                     <v-card
                         class="text-center d-flex flex-row align-center justify-center bg-black"
-                        variant=""
+                        variant="flat"
                         rounded="xl"
                         min-height="400"
                     >
@@ -205,7 +190,12 @@
 
 
             </v-container>
-            <v-container fluid class="my-10 px-16 bg-grey-lighten-4">
+          <v-container class="d-inline-block d-sm-none">
+            <mobile-title-list
+            :posts="categories"
+            />
+          </v-container>
+            <v-container fluid class="my-10 px-16 bg-grey-lighten-4 d-none d-sm-inline-block">
               <v-row class="d-flex flex-column justify-center text-center align-center">
                 <v-sheet class="d-flex flex-column align-center bg-grey-lighten-4">
                   <p class="text-h4 text-xl-h3 font-weight-bold my-5 ">
@@ -235,9 +225,10 @@
 <script>
 import { mapGetters, mapActions } from 'vuex';
 import TitlePostListV2 from '@/components/layouts/TitlePostListV2.vue';
+import MobileTitleList from "@/components/MobileTitleList.vue";
     export default {
         data:() => ({rating:4.5, totalRating:17,}),
-        components:{TitlePostListV2},
+        components:{TitlePostListV2,MobileTitleList},
         mounted(){
         this.fetchCategories();
 

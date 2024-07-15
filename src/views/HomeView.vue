@@ -98,7 +98,7 @@
             </v-sheet>
             <v-card
 
-               v-if="dialog2==false"
+               v-if="dialog2===false"
 
             class="my-4"
             :rounded=true
