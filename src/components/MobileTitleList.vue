@@ -15,8 +15,30 @@
         :id="post.id"
         :title="post.title"
         :icon="post.icon"
-
     />
+    <v-col cols="12">
+      <v-card
+          variant="flat"
+          @click="$router.push(`/categories/`)"
+          color="light-green-accent-4"
+      >
+        <div class="d-flex justify-space-between px-5 align-center">
+          <div>
+            <v-card-title> Больше на отдельной странице </v-card-title>
+
+          </div>
+          <div>
+            <v-icon
+                color="light-green-accent-4"
+                :icon= icon
+                size="65"
+            >
+            </v-icon>
+          </div>
+        </div>
+      </v-card>
+
+    </v-col>
 
   </v-row>
 </template>

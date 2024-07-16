@@ -52,7 +52,9 @@
         <v-row justify="center">
           <v-col
               cols="12"
-              sm="2"
+              lg="3"
+              xl="2"
+
               class="pt-7"
               
           >
@@ -122,7 +124,10 @@
           </v-col>
           <v-col
               cols="12"
-              sm="6"
+              lg="6"
+              xl="6"
+              sm="12"
+              class="justify-center"
           >
             <post-list
               :posts="selectedPostsAndSearch"

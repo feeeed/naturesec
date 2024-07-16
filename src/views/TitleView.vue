@@ -1,13 +1,16 @@
 <template>
     <div class="welcome">
         <v-main>
+          <v-container>
             <v-row class="flex-wrap-reverse" justify="center">
                 <v-col
                 cols="10"
+                lg="7"
+                md="7"
                 sm="6"
                 class="d-flex flex-column justify-center">
                     <div class="title">
-                        <v-sheet class="mt-16">
+                        <v-sheet class>
                             <p class="text-h4 font-weight-bold d-flex d-md-none text-light-green-accent-4">
                                 Природоохранный центр
                             </p>
@@ -40,14 +43,14 @@
                         density="compact" 
                         variant="outlined" 
                         icon="mdi-plus" 
-                        size="x-large" 
-                        class="mx-10"
+                        size="x-large"
+                        class="mx-5"
                         ></v-btn>
-                        <v-btn 
-                        density="compact" 
-                        variant="outlined" 
-                        rounded="" 
-                        size="x-large" 
+                        <v-btn
+                        density="compact"
+                        variant="outlined"
+                        rounded=""
+                        size="x-large"
                         min-width="120"
                         class="text-none font-weight-bold"
                         @click="$router.push(`/about`)"
@@ -56,6 +59,8 @@
                 </v-col>
                 <v-col 
                 cols="10"
+                md="4"
+                lg="4"
                 sm="4"
                 class="d-flex justify-center flex-grow-1 flex-shrink-0 ">
                 <div class="d-none d-md-flex my-16">
@@ -72,6 +77,7 @@
                 </div>
                 </v-col>
             </v-row>
+          </v-container>
             <v-container fluid class="my-10 px-16 d-none d-sm-inline-block">
 
             <v-row
@@ -98,7 +104,7 @@
                             v-model="rating"
                             color="light-green-accent-4"
                             density="comfortable"
-                            readonly="1"
+                            readonly
                             half-increments
                         >
                     </v-rating>
@@ -112,7 +118,7 @@
                     cols="10"
                     sm="5">
                     <v-card
-                        class="text-center d-flex flex-row align-center justify-center bg-grey-lighten-4"
+                        class="text-center d-flex flex-column align-center justify-center bg-grey-lighten-4"
                         variant="flat"
                         rounded="xl"
                         min-height="400"
@@ -136,7 +142,7 @@
                 sm="8"
                 >
                     <v-card
-                        class="text-center d-flex flex-row align-center justify-center bg-grey-lighten-4"
+                        class="text-center d-flex flex-column align-center justify-center bg-grey-lighten-4"
                         variant="flat"
                         rounded="xl"
                         min-height="400"
@@ -185,11 +191,10 @@
                     </v-card>
                 </v-col>
             </v-row>
-
-
-
-
             </v-container>
+          <v-container class="d-inline-block d-sm-none">
+            <mobile-title-info/>
+          </v-container>
           <v-container class="d-inline-block d-sm-none">
             <mobile-title-list
             :posts="categories"
@@ -226,9 +231,10 @@
 import { mapGetters, mapActions } from 'vuex';
 import TitlePostListV2 from '@/components/layouts/TitlePostListV2.vue';
 import MobileTitleList from "@/components/MobileTitleList.vue";
+import MobileTitleInfo from "@/components/MobileTitleInfo.vue";
     export default {
         data:() => ({rating:4.5, totalRating:17,}),
-        components:{TitlePostListV2,MobileTitleList},
+        components:{TitlePostListV2,MobileTitleList,MobileTitleInfo},
         mounted(){
         this.fetchCategories();
 
@@ -243,7 +249,8 @@ import MobileTitleList from "@/components/MobileTitleList.vue";
     methods:{
         ...mapActions({
             fetchCategories:'fetchCategories'
-        })
+        }),
+
 
     }
         
@@ -251,10 +258,7 @@ import MobileTitleList from "@/components/MobileTitleList.vue";
 </script>
 
 <style scoped>
-.text-h1{
-    color: #3ADA2A;
-    
-    
-}
+
+
 
 </style>

@@ -1,7 +1,7 @@
 <template>
     <v-card
         class="overflow-hidden my-5"
-        max-width="800px"
+        
         flat
     >
       <v-card-item>
