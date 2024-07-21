@@ -14,7 +14,7 @@ const mutations = {
     state.isPostsLoading = bool;
   },
   setPostError(state, error) {
-    state.postsError = error;
+    state.postError = error;
   },
   setSearchQuery(state, searchQuery) {
     if (searchQuery === undefined) {
@@ -81,7 +81,7 @@ const actions = {
 const getters = {
   post: ({ post }) => post,
   posts: ({ posts }) => posts,
-  postsError: ({ postsError }) => postsError,
+  postError: ({ postError }) => postError,
   selectedPosts(state) {
     return [...state.posts].filter((post) =>
       post.tags.includes(state.selectedQuery)
@@ -105,7 +105,7 @@ const state = () => ({
   post: {},
   posts: [],
   isPostsLoading: false,
-  postsError: null,
+  postError: null,
   searchQuery: "",
   selectedQuery: "",
   page: 1,

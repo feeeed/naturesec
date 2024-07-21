@@ -70,7 +70,7 @@
             </v-card>
           </v-col>
         </v-row>
-        <v-row class="justify-center my-16">
+        <v-row class="justify-center my-16 d-none d-sm-flex">
           <v-col cols="12" sm="10">
             <v-timeline direction="horizontal">
               <v-timeline-item dot-color="green">
@@ -111,6 +111,9 @@
           </v-col>
         </v-row>
       </v-container>
+      <v-container>
+      
+      </v-container>
     </div>
   </v-main>
 </template>
@@ -120,12 +123,7 @@ import { mapActions, mapGetters } from "vuex";
 
 export default {
   mounted() {
-    this.fetchServiceEk(this.$route.params.id);
-    
-    
-  },
-  updated(){
-    this.jivo_onOpen();
+    this.fetchServiceEk(this.$route.params.id); 
   },
   computed: {
     ...mapGetters({

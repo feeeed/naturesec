@@ -6,23 +6,21 @@
         v-bind="props"
         min-width="200"
         min-height="200"
+        :elevation="isHovering ? 12 : 0"
         variant="flat"
         rounded="xl"
+        @click="$router.push(`/category/${id}`)"
       >
-        <v-icon color="light-green-accent-4" :icon="icon" size="85"> </v-icon>
+        <v-icon
+          color="light-green-accent-4"
+          :icon="icon"
+          :style="isHovering ? 'transform: scale(1.5)' : undefined"
+          size="85"
+        >
+        </v-icon>
         <v-card-subtitle class="py-4">
           {{ title }}
         </v-card-subtitle>
-        <v-overlay
-          :model-value="isHovering"
-          contained
-          scrim="#036358"
-          class="align-center justify-center"
-        >
-          <v-btn variant="flat" @click="$router.push(`/category/${id}`)"
-            >Подробнее</v-btn
-          >
-        </v-overlay>
       </v-card>
     </v-hover>
   </v-col>
@@ -47,4 +45,9 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="css" scoped>
+.v-icon{
+  transition: transform .5s;
+}
+
+</style>

@@ -10,16 +10,21 @@
             max-height="600"
           >
             <v-parallax
-                v-if="autoScaleParallax"
-                :src="require('@/assets/aTaBo2kIdSRoEqjqZmn269dQRqKb2sUOY8MgkL_F2cc.webp')"
-                :scale = 0.5
+              :src="
+                require('@/assets/aTaBo2kIdSRoEqjqZmn269dQRqKb2sUOY8MgkL_F2cc.webp')
+              "
+              :scale="0.5"
             >
               <div
-                  class="d-flex flex-column fill-height justify-center align-center text-white"
+                class="d-flex flex-column fill-height justify-center align-center text-white"
               >
-                <h1 class="text-h4 text-xl-h3 font-weight-bold mb-3">Нам 20 лет!</h1>
-                <h4 class="text-body-1 font-weight-medium">На протежении двадцати лет нам доверяют множество заказчиков и вот
-                  почему -</h4>
+                <h1 class="text-h4 text-xl-h3 font-weight-bold mb-3">
+                  Нам 20 лет!
+                </h1>
+                <h4 class="text-body-1 font-weight-medium">
+                  На протежении двадцати лет нам доверяют множество заказчиков и
+                  вот почему -
+                </h4>
               </div>
             </v-parallax>
           </v-card>
@@ -79,7 +84,7 @@ import ReviewCard from "@/components/layouts/ ReviewCard.vue";
 
 export default {
   data: () => ({
-    containerWidth: 0,
+    containerWidth: false,
     parallaxVersion: null,
     cards: [
       {
@@ -108,41 +113,10 @@ export default {
   components: {
     ReviewCard,
   },
-  computed: {
-    autoScaleParallax(){
-      let current = null
-      if(this.containerWidth > 768) {
-        current = true;
-        console.log("desktop")
-      } else {
-        console.log("mobile")
-        current = false;
-      }
-
-      return {
-        current
-
-      };
-    }
-  },
-  methods:{
-    handleResize() {
-      this.containerWidth = this.$el.clientWidth;
-      console.log(this.containerWidth)
-    },
-  },
-  mounted(){
-    this.containerWidth = this.$el.clientWidth;
-    window.addEventListener('resize', this.handleResize)
-
-  }
-
 };
 </script>
 
 <style scoped>
-
-
 ul {
   margin-left: 0;
   /* Отступ слева в браузере IE и Opera */
