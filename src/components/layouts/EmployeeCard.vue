@@ -1,24 +1,14 @@
 <template>
   <div>
-    <v-card
-        class="mx-11 my-4"
-        max-width="344"
-    >
-      <v-img
-
-          :src="img"
-          height="200px"
-          width="200px"
-          cover
-      >
-      </v-img>
+    <v-card class="mx-11 my-4" max-width="344">
+      <v-img :src="img" height="200px" width="200px" cover> </v-img>
 
       <v-card-title>
-        {{title}}
+        {{ title }}
       </v-card-title>
 
       <v-card-subtitle>
-        {{subtitle}}
+        {{ subtitle }}
       </v-card-subtitle>
     </v-card>
   </div>
@@ -26,25 +16,22 @@
 
 <script>
 export default {
-  name:'EmployeeCard.vue',
-  props:{
-    title:{
-      type:String,
-      default:''
+  name: "EmployeeCard.vue",
+  props: {
+    title: {
+      type: String,
+      default: "",
     },
-    img:{
-      type:String,
-      default: ''
+    img: {
+      type: String,
+      default: "",
     },
-    subtitle:{
-      type:String,
-      default:''
-    }
-  }
-
-}
+    subtitle: {
+      type: String,
+      default: "",
+    },
+  },
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

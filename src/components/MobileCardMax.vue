@@ -1,52 +1,44 @@
 <template>
   <v-col cols="12">
     <v-card
-        variant="flat"
-        @click="$router.push(`/category/${id}`)"
+      variant="flat"
+      elevation="1"
+      @click="$router.push(`/category/${id}`)"
+      height="60px"
     >
       <div class="d-flex justify-space-between px-5 align-center">
         <div>
           <v-card-title class="text-h5"> {{ title }} </v-card-title>
-
         </div>
         <div>
-          <v-icon
-          color="light-green-accent-4"
-          :icon= icon
-          size="65"
-          >
-          </v-icon>
+          <v-icon color="light-green-accent-4" :icon="icon" size="35"> </v-icon>
         </div>
       </div>
     </v-card>
-
   </v-col>
 </template>
 
 <script>
 export default {
-  name:'mobile-card-max',
-  props:{
-    id:{
+  name: "mobile-card-max",
+  props: {
+    id: {
       type: Number,
     },
-    title:{
+    title: {
       type: String,
-      default:''
+      default: "",
     },
-    description:{
+    description: {
       type: String,
-      default:'',
+      default: "",
     },
-    icon:{
+    icon: {
       type: String,
-      default:'',
-    }
-
-  }
-}
+      default: "",
+    },
+  },
+};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

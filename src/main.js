@@ -25,5 +25,5 @@ const settings = {
     version: '2.1'
 }
 
-createApp(App).use(store).use(vuetify,{iconfont:'mdi',}).use(router).use(ymapPlugin,settings).mount('#app')
+createApp(App).use(store).use(vuetify,{iconfont:'mdi'}).use(router).use(ymapPlugin,settings).mount('#app')
 
