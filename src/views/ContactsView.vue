@@ -3,20 +3,25 @@
     <v-container>
       <v-row class="d-flex justify-center">
         <v-col>
-          <v-sheet class="d-flex flex-column align-center mb-10">
-            <p class="text-h4 text-xl-h3 font-weight-bold mb-3">Нам 20 лет!</p>
-            <p class="text-body-1 font-weight-medium text-medium-emphasis">
-              На протежении двадцати лет нам доверяют множество заказчиков и вот
-              почему -
-            </p>
-          </v-sheet>
           <v-card
             class="text-center d-flex flex-row align-center justify-center"
-            :image="require('@/assets/testpic.webp')"
             variant="outlined"
             rounded="xl"
-            min-height="400"
+            max-height="600"
           >
+            <v-parallax
+                v-if="autoScaleParallax"
+                :src="require('@/assets/aTaBo2kIdSRoEqjqZmn269dQRqKb2sUOY8MgkL_F2cc.webp')"
+                :scale = 0.5
+            >
+              <div
+                  class="d-flex flex-column fill-height justify-center align-center text-white"
+              >
+                <h1 class="text-h4 text-xl-h3 font-weight-bold mb-3">Нам 20 лет!</h1>
+                <h4 class="text-body-1 font-weight-medium">На протежении двадцати лет нам доверяют множество заказчиков и вот
+                  почему -</h4>
+              </div>
+            </v-parallax>
           </v-card>
         </v-col>
       </v-row>
@@ -42,8 +47,8 @@
         <v-col cols="12" sm="6">
           <v-card
             class="text-center d-flex flex-row align-center justify-center"
+            :image="require('@/assets/titlepnsdf.png')"
             variant="outlined"
-            :image="require('@/assets/testpic2.webp')"
             rounded="xl"
             min-height="500"
           >
@@ -74,6 +79,8 @@ import ReviewCard from "@/components/layouts/ ReviewCard.vue";
 
 export default {
   data: () => ({
+    containerWidth: 0,
+    parallaxVersion: null,
     cards: [
       {
         title: "Росводоканал",
@@ -101,17 +108,40 @@ export default {
   components: {
     ReviewCard,
   },
+  computed: {
+    autoScaleParallax(){
+      let current = null
+      if(this.containerWidth > 768) {
+        current = true;
+        console.log("desktop")
+      } else {
+        console.log("mobile")
+        current = false;
+      }
+
+      return {
+        current
+
+      };
+    }
+  },
+  methods:{
+    handleResize() {
+      this.containerWidth = this.$el.clientWidth;
+      console.log(this.containerWidth)
+    },
+  },
+  mounted(){
+    this.containerWidth = this.$el.clientWidth;
+    window.addEventListener('resize', this.handleResize)
+
+  }
+
 };
 </script>
 
 <style scoped>
-.title-text {
-  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
-}
 
-.subheading {
-  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
-}
 
 ul {
   margin-left: 0;
