@@ -1,21 +1,17 @@
 <template>
-    <div class="topSidebar">
-        <div class="contentItem"
-         v-for="(item,key) in content"
-        :key="key"
-        :name="item.name"
-        :value="item.value"
-        />
-
-    </div>
+  <div class="topSidebar">
+    <div
+      class="contentItem"
+      v-for="(item, key) in content"
+      :key="key"
+      :name="item.name"
+      :value="item.value"
+    />
+  </div>
 </template>
 
 <script>
-    export default {
-        
-    }
+export default {};
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>

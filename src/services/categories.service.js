@@ -1,7 +1,7 @@
-import {request} from "./main.service";
+import { request } from "./main.service";
 
-const getCategory = id => request({url:`categories/${id}`,method:"get"});
+const getCategory = (id) => request({ url: `categories/${id}`, method: "get" });
 
-const getCategories = () => request({url:`categories`, method:"get"});
+const getCategories = () => request({ url: `categories`, method: "get" });
 
-export {getCategory,getCategories};
+export { getCategory, getCategories };

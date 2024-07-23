@@ -7,7 +7,5 @@ export default createStore({
     post:post,
     categories:categories,
     servicesEk:servicesEk,
-
-
   }
 })

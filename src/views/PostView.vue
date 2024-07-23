@@ -1,64 +1,49 @@
 <template>
   <v-main class="bg-grey-lighten-3">
-    <v-container
-    >
+    <v-container>
       <post-card
-
-          :title="post.title"
-          :description="post.description"
-          :main-content="post.mainContent"
-          :imageURL="post.imageURL"
-
+        :title="post.title"
+        :description="post.description"
+        :main-content="post.mainContent"
+        :imageURL="post.imageURL"
       >
-
       </post-card>
-
-
     </v-container>
   </v-main>
-
-
-
-
-
-
 </template>
 
 <script>
-import {mapActions, mapGetters,} from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import PostCard from "@/components/PostCard.vue";
 
-
- export default {
-   components:{
-     PostCard
-   },
+export default {
+  components: {
+    PostCard,
+  },
   mounted() {
     this.fetchPost(this.$route.params.id);
   },
-  computed:{
+  computed: {
     ...mapGetters({
-      post: 'post'
-
+      post: "post",
     }),
   },
-  methods:{
+  methods: {
     ...mapActions({
-      fetchPost:'fetchPost',
+      fetchPost: "fetchPost",
     }),
-  }
-}
+  },
+};
 </script>
 
 <style>
-
 ol {
   padding-left: 40px;
 }
-ul{
+ul {
   padding-left: 40px;
 }
-p{
+p {
   line-height: 110%;
 }
 </style>
