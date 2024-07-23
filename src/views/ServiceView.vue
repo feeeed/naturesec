@@ -23,7 +23,7 @@
               color="#3ADA2A"
               size="x-large"
               height="60"
-              class="text-none font-weight-bold text-white w-50"
+              class="text-none font-weight-bold text-white mt-5"
               @click="customJivoOpen()"
             >
               Узнать точную стоимость
@@ -112,7 +112,9 @@
         </v-row>
       </v-container>
       <v-container>
-      
+        <services-prew-list
+        :servicesEk="similarServicesEk"     
+        />   
       </v-container>
     </div>
   </v-main>
@@ -120,19 +122,30 @@
 
 <script>
 import { mapActions, mapGetters } from "vuex";
+import ServicesPrewList from "@/components/ServicesPrewList.vue";
 
 export default {
+  components:{
+    ServicesPrewList
+
+  },
   mounted() {
+    this.fetchServiceEk(this.$route.params.id); 
+    this.fetchSimilarServicesEk(this.$route.params.id)
+  },
+  updated(){
     this.fetchServiceEk(this.$route.params.id); 
   },
   computed: {
     ...mapGetters({
       serviceEk: "serviceEk",
+      similarServicesEk: "similarServicesEk",
     }),
   },
   methods: {
     ...mapActions({
       fetchServiceEk: "fetchServiceEk",
+      fetchSimilarServicesEk:"fetchSimilarServicesEk"
     }),
     customJivoOpen() {
       let params = { start: "chat" };

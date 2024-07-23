@@ -1,4 +1,4 @@
-import { getAllServicesEk, getServiceEk } from "@/services/servicesEk.service";
+import { getAllServicesEk, getServiceEk, getSimilarServicesEk } from "@/services/servicesEk.service";
 
 const mutations = {
   setServiceEk(state, serviceEk) {
@@ -10,6 +10,9 @@ const mutations = {
   setServicesEk(state, servicesEk) {
     state.servicesEk = servicesEk;
   },
+  setSimilarServicesEk(state, similarServicesEk) {
+    state.similarServicesEk = similarServicesEk
+  }
 };
 
 const actions = {
@@ -29,17 +32,27 @@ const actions = {
       commit("setError", err);
     }
   },
+  async fetchSimilarServicesEk({commit},id) {
+    try {
+      const items = await getSimilarServicesEk(id);
+      commit("setSimilarServicesEk", items);
+    } catch (err) {
+      commit("setError",err);
+    }
+  }
 };
 
 const getters = {
   serviceEk: ({ serviceEk }) => serviceEk,
   servicesEk: ({ servicesEk }) => servicesEk,
+  similarServicesEk: ({similarServicesEk}) => similarServicesEk,
 };
 
 const state = () => ({
   serviceEk: {},
   error: {},
   servicesEk: [],
+  similarServicesEk: [],
 });
 
 export default {
